@@ -11,53 +11,34 @@ class MyApp extends StatelessWidget{
         backgroundColor: Colors.blueGrey,
         body: SafeArea(
         child: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          //mainAxisAlignment: MainAxisAlignment.start,
-          //mainAxisAlignment: MainAxisAlignment.end,
-          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //crossAxisAlignment: CrossAxisAlignment.stretch,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          //crossAxisAlignment: CrossAxisAlignment.start,
-
-          children: <Widget>[
+        children: <Widget>[
           Container(
-          color:Colors.lightBlueAccent,
-          height: 100.0,
-          //width: 100.0,
-          child: Text("QuratulAIn"),
-
+            color: Colors.white,
+            padding: EdgeInsets.all(15.0),
+            margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+            child: Row(
+              children: <Widget>[
+                Icon(Icons.phone,
+                color: Colors.teal,
+                size: 30.0,
+                ),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text(
+                  '+923458478901',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
           ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Container(
-              color:Colors.blue,
-              height: 100.0,
-             // width: 100.0,
-              child: Text("QuratulAIn"),
-
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Container(
-              color:Colors.teal,
-              height: 100.0,
-             // width: 100.0,
-              child: Text("QuratulAIn"),
-
-            ),
-            Container(
-              width: double.infinity,
-              height: 10.0,
-              color: Colors.white,
-            ),
-          ],
-        )
+        ]
         ),
       ),
-
+      ),
     );
 
 }
