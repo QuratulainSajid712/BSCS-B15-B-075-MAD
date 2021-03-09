@@ -12,6 +12,10 @@ class MyApp extends StatelessWidget{
         body: SafeArea(
         child: Column(
         children: <Widget>[
+          CircleAvatar(
+            backgroundImage:AssetImage('images/IMG-20190329-WA0017.png') ,
+            radius: 100.0,
+          ),
           Container(
             color: Colors.white,
             padding: EdgeInsets.all(15.0),
