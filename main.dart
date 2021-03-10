@@ -14,7 +14,18 @@ class MyApp extends StatelessWidget{
         children: <Widget>[
           CircleAvatar(
             backgroundImage:AssetImage('images/IMG-20190329-WA0017.png') ,
+            backgroundColor: Colors.white,
             radius: 100.0,
+          ),
+          Text(
+            'Qurat-Ul-Ain Sajid',
+              style: TextStyle(
+                fontFamily: 'Pacifico',
+                color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 30.0,
+
+              ),
           ),
           Container(
             color: Colors.white,
@@ -39,6 +50,7 @@ class MyApp extends StatelessWidget{
               ],
             ),
           ),
+
         ]
         ),
       ),
