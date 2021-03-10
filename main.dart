@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget{
         backgroundColor: Colors.blueGrey,
         body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           CircleAvatar(
             backgroundImage:AssetImage('images/IMG-20190329-WA0017.png') ,
@@ -27,50 +29,57 @@ class MyApp extends StatelessWidget{
 
               ),
           ),
-          Container(
-            color: Colors.white,
-            padding: EdgeInsets.all(15.0),
-            margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-            child: Row(
-              children: <Widget>[
-                Icon(Icons.phone,
-                color: Colors.teal,
-                size: 30.0,
-                ),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text(
-                  '+923458478901',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
+          Text(
+            'CIIT/FA17-BCS-075/VHR',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 15.0,
+              letterSpacing: 4.0,
+
             ),
           ),
-          Container(
+          SizedBox(
+            width: 600.0,
+            height: 20.0,
+            child: Divider(
+                color:  Colors.white,
+                thickness: 2.0
+            ),
+          ),
+          Card(
             color: Colors.white,
-            padding: EdgeInsets.all(15.0),
             margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-            child: Row(
-              children: <Widget>[
-                Icon(Icons.email,
-                  color: Colors.teal,
-                  size: 30.0,
+            child: ListTile(
+              leading: Icon(Icons.phone,
+                color: Colors.teal,
+                size: 30.0,
+              ),
+              title: Text(
+                '+923458790103',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
                 ),
-                SizedBox(
-                  width: 10.0,
+              ),
+            ),
+          ),
+          Card(
+            color: Colors.white,
+            margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+            child: ListTile(
+              leading: Icon(Icons.email,
+                color: Colors.teal,
+                size: 30.0,
+              ),
+
+              title: Text(
+                'quratulainsajid12@gmail.com',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
                 ),
-                Text(
-                  'quratulainsajid12@gmail.com',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ]
