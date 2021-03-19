@@ -100,7 +100,7 @@ boxShadow:[
         ),
       ),
 
-      SizedBox(height: 81,)    ,
+      SizedBox(height: 78,)    ,
       GestureDetector(
         child: Container(
           alignment: Alignment.center,
@@ -120,7 +120,7 @@ boxShadow:[
           ),
           child: Padding(
               padding: EdgeInsets.all(15.0),
-              child: Text("Get Started",textAlign: TextAlign.right, style:TextStyle(fontSize: 10.0,fontWeight: FontWeight.bold,color: Colors.white,))
+              child: Text("Get Started",textAlign: TextAlign.left, style:TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold,color: Colors.white,))
           ),
         )
       ),
@@ -132,10 +132,14 @@ boxShadow:[
     ],
     ),
 
-          
+
         ),
+          SizedBox(height: 150,),
+          Text("Not Registered? Create Account.", style: TextStyle(fontSize:14,color: Colors.black,),),
         ],
+
     ),
+
       ),
     ),
       ),
