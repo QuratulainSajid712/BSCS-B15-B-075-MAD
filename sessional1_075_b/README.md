@@ -1,6 +1,6 @@
-# sessional1_075_b
+sessional1_075_b
 
-A new Flutter application.
+Completed 1st Part of Interface Design that was Assigned As Sessional
 
 ## Getting Started
 
