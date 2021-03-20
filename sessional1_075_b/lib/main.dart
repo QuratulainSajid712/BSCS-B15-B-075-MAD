@@ -11,13 +11,11 @@ void main() {
   ));
 }
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: new Scaffold(
-
-
         body: SingleChildScrollView(
         child: Container(
         child: Column(
@@ -33,21 +31,15 @@ class MyApp extends StatelessWidget {
 
     child: Stack(
     children: <Widget>[
-      Positioned(
-        top: 10,
-right: 0.01,
-left: 0.01,
-
-        height:320.0,
-        child:  Container(
-
-          decoration: BoxDecoration(
-              image: DecorationImage(
+      Container(
+        height:310.0,
+        decoration: BoxDecoration(
+            image: DecorationImage(
                 image: AssetImage('images/pic3.png',),
-              )
-          ),
-
+                fit: BoxFit.fill
+            )
         ),
+
       ),
     Positioned(
     left: 200,
@@ -128,20 +120,16 @@ boxShadow:[
           child: Padding(
               padding: EdgeInsets.all(15.0),
             child: Text("Get Started",textAlign: TextAlign.left, style:TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold,color: Colors.white,)),
-
             ),
           ),
         )
-
 ],
     ),
         ),
-
     ),
     ],
     ),
         ),
-          SizedBox(height: 150,),
           Text("Not Registered? Create Account.", style: TextStyle(fontSize:14,color: Colors.black,),),
         ],
     ),
