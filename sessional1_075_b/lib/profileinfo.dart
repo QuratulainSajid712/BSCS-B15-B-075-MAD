@@ -97,6 +97,33 @@ class profilepage extends StatelessWidget {
                                 fit: BoxFit.cover,
                               ),
                             ),
+                            /*   Positioned(
+                           top: 344,
+                           right: 50,
+                           child: Stack(
+                             alignment: Alignment.center,
+                             children: [
+                               Positioned(
+                                   left:0,
+                                   right: 0,
+                                   child:Container(height: 60,
+                                   decoration: BoxDecoration(
+                                     boxShadow: [
+                                       BoxShadow(color: Color.fromARGB(51, 0, 0, 0),
+                                       offset: Offset(0,20),
+                                       blurRadius: 30,),
+                                     ],
+                                   ),
+                                     child: Image.asset('icons/person.jpg',fit: BoxFit.fill,),
+                                   ),
+                               ),
+                               Positioned(left: 18,
+                               right: 18,
+                               child: Image.asset('icons/plus.png',
+                                 fit: BoxFit.fill,),
+                               ),
+                             ],
+                           ),),*/
                             Container(
                               height:210.0,
                               decoration: BoxDecoration(
@@ -180,8 +207,64 @@ class profilepage extends StatelessWidget {
                               ),
 
                             ),
+                            Container(
+                              height:60.0,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                              ),
+                              child:Stack(
+                                children: <Widget>[
+                                  Positioned(
+                                    top: 10,
+                                    left: 2,
+                                    width: 80,
+                                    height: 35,
+                                    child:  Container(
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage('icons/message.png')
+                                          )
+                                      ),
+                                    ),
+                                  ),
+
+                                  Positioned(
+                                    top: 10,
+                                    left: 150,
+                                    width: 80,
+                                    height: 35,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage('icons/phone.png')
+                                          )
+                                      ),
+                                    ),
+                                  ),
+
+                                  Positioned(
+                                    top: 12,
+                                    left: 300,
+
+                                    width: 80,
+                                    height: 30,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage('icons/video.png')
+                                          )
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                            ),
+
                           ],
+
                           ),
+
                         ),
                       ),
                     ],
