@@ -50,6 +50,11 @@ flutter:
     - images/pic1.png
     - images/pic3.png
     - images/3.jpg
+    - icons/message.png
+    - icons/phone.png
+    - icons/video.png
+    - icons/person.jpg
+    - icons/plus.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
