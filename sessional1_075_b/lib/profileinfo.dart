@@ -74,7 +74,7 @@ class profilepage extends StatelessWidget {
                         left: 30,
                         top: 50,
                         child: Container(
-                          height: 550,
+                          height: 500,
                           width: 400,
                           margin: EdgeInsets.symmetric(horizontal: 20),
                           decoration: BoxDecoration(
@@ -89,21 +89,100 @@ class profilepage extends StatelessWidget {
 
                           ),
                           child: Column( children:[
-                            Container(height:230.0,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage('images/pic5.jpg',),
-                                      fit: BoxFit.fill
-                                  )
+                            Container(
+                              child: Image.network(
+                                'images/3.jpg',
+                                height: 230,
+                                width: double.infinity,
+                                fit: BoxFit.cover,
                               ),
                             ),
+                            Container(
+                              height:210.0,
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                  colors: <Color>[
+                                    Color(0xFFE0F7FA),
+                                    Color(0xFF80DEEA),
+                                    Color(0xFF26C6DA),
+                                  ],
+                                ),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 30.0,horizontal: 16.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      "Event Manager",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontStyle: FontStyle.normal,
+                                        fontSize: 10.0,
+                                        letterSpacing: 2.0,
+                                      ),
+                                    ),
+                                    Text('San Francisco',
+                                      style: TextStyle(
+                                        fontSize: 10.0,
+                                        fontWeight: FontWeight.w300,
+                                        color: Colors.black,
+                                        letterSpacing: 2.0,
+                                      ),
+                                    ),
+                                    SizedBox(height:30),
+                                    Divider(
 
+                                      color: Color(0xFF80DEEA),
+                                    ),
+                                    SizedBox(height: 40,),
+                                    Container(
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Column(
+                                            children:[
+                                              Text('145K',
+                                                  style:TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0)),
+                                              SizedBox(height: 5,),
+                                              Text('Followers',style: TextStyle(fontSize: 10, letterSpacing: 1),),
+                                            ],
+                                          ),
+                                          Divider(height: 10, color: Colors.black,),
+                                          Column(
+                                            children:[
+                                              Text('56K',
+                                                  style:TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0)),
+                                              SizedBox(height: 5,),
+                                              Text('Following',style: TextStyle(fontSize: 10, letterSpacing: 1),),
+                                            ],
+                                          ),
+                                          Divider(height: 10, color: Colors.black,),
+                                          Column(
+                                            children:[
+                                              Text('1,690',
+                                                  style:TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0)),
+                                              SizedBox(height: 5,),
+                                              Text('Likes',style: TextStyle(fontSize: 10, letterSpacing: 1),),
+                                            ],
+                                          ),
+                                          Divider(height: 10, color: Colors.black,),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+
+                                ),
+
+                              ),
+
+                            ),
                           ],
                           ),
-
-
                         ),
-
                       ),
                     ],
                   ),
