@@ -2,6 +2,7 @@
 
 ## Completed 1st Part of Interface Design that was Assigned As Sessional
 ## Completed 2nd Part of Interface Design that was Assigned As Sessional
+## Completed 3rd Part of Interface Design that was Assigned As Sessional
 
 ## Getting Started
 
