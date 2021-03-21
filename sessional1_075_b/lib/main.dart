@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sessional1_075/chatpage.dart';
 import 'package:sessional1_075/profileinfo.dart';
 
 void main() {
@@ -7,6 +8,7 @@ void main() {
     routes: {
       '/': (context) => MyApp(),
       '/second': (context) => profilepage(),
+      '/third': (context) =>  homepage(),
     },
   ));
 }
