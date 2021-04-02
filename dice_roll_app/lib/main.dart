@@ -17,7 +17,15 @@ class DicePage extends StatelessWidget{
   Widget build(BuildContext context){
     return Row(
       children: [
-        Image(image: new AssetImage('images/dice1.png'))
+        Expanded(
+            child: Image(image: new AssetImage('images/dice1.png')
+            )
+        ),
+        Expanded(
+            child: Image(image: new AssetImage('images/dice2.png')
+            )
+        ),
+
       ],
 
     );
