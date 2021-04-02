@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    home: Scaffold(
+      backgroundColor: Colors.amberAccent,
+    ),
+  ));
 }
 
