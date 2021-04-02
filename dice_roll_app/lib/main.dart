@@ -18,7 +18,7 @@ class DicePage extends StatefulWidget {
 }
 
 class _DicePageState extends State<DicePage>{
-  int image = 1;
+  int left_image = 1;
   @override
   Widget build(BuildContext context) {
     return
@@ -28,9 +28,12 @@ class _DicePageState extends State<DicePage>{
             Expanded(
                 child: FlatButton(
                     onPressed: () {
-                      print('Dice1');
+                      setState(() {
+                        left_image = 5;
+                      });
+                      print('Value$left_image');
                     },
-                    child: Image.asset('images/dice$image.png'))
+                    child: Image.asset('images/dice$left_image.png'))
             ),
             Expanded(
                 child: FlatButton(
