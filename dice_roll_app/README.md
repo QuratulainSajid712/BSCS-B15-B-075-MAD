@@ -1,6 +1,6 @@
 # dice_roll_app
 
-A new Flutter application.
+##Completed Dice Roll App
 
 ## Getting Started
 
