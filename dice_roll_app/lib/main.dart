@@ -12,31 +12,35 @@ void main() {
     ),
   ));
 }
-class DicePage extends StatelessWidget{
-  int image=1;
+class DicePage extends StatefulWidget {
   @override
-  Widget build(BuildContext context){
-    var image=5;
+  _DicePageState createState() => _DicePageState();
+}
+
+class _DicePageState extends State<DicePage>{
+  int image = 1;
+  @override
+  Widget build(BuildContext context) {
     return
       Center(
         child: Row(
-        children: [
-          Expanded(
-              child: FlatButton(
-                  onPressed: (){
-                    print('Dice1');
-                  },
-        child: Image.asset('images/dice$image.png'))
-              ),
-          Expanded(
-              child: FlatButton(
-                  onPressed: (){
-                    print('Dice2');
-                  },
-                  child: Image.asset('images/dice2.png'))
-          ),
-        ],
-    ),
+          children: [
+            Expanded(
+                child: FlatButton(
+                    onPressed: () {
+                      print('Dice1');
+                    },
+                    child: Image.asset('images/dice$image.png'))
+            ),
+            Expanded(
+                child: FlatButton(
+                    onPressed: () {
+                      print('Dice2');
+                    },
+                    child: Image.asset('images/dice2.png'))
+            ),
+          ],
+        ),
       );
   }
 }
