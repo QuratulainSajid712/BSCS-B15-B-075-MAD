@@ -8,8 +8,16 @@ void main() {
         title: Text('Dicee'),
         backgroundColor: Colors.amberAccent,
       ),
-      
+      body: DicePage(),
     ),
   ));
+}
+class DicePage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Container(
+
+    );
+  }
 }
 
