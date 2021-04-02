@@ -41,7 +41,7 @@ class _DicePageState extends State<DicePage>{
                 child: FlatButton(
                     onPressed: () {
                       setState(() {
-                        right_image=4;
+                        right_image=Random().nextInt(6)+1;
                       });
                       print('Dice2_Value$right_image');
                     },
