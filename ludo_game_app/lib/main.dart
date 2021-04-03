@@ -18,8 +18,8 @@ class LudoPage extends StatefulWidget {
 }
 
 class _LudoPageState extends State<LudoPage>{
-  left_image=1;
-  right_image=1;
+ int  left_image=1;
+ int right_image=1;
   @override
   Widget build(BuildContext context) {
     Center(
