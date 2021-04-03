@@ -19,6 +19,7 @@ class LudoPage extends StatefulWidget {
 
 class _LudoPageState extends State<LudoPage>{
   left_image=1;
+  right_image=1;
   @override
   Widget build(BuildContext context) {
     Center(
@@ -34,6 +35,19 @@ class _LudoPageState extends State<LudoPage>{
     },
         child: Image.asset('images/dice$left_image.png'))
     ),
+              Expanded(
+                  child: FlatButton(
+                      onPressed: () {
+                        setState(() {
+                          right_image=Random().nextInt(6)+1;
+                        });
+                        print('Dice2_Value$right_image');
+                      },
+                      child: Image.asset('images/dice$right_image.png'))
+              ),
+            ],
+        ),
+    );
   }
 }
 
