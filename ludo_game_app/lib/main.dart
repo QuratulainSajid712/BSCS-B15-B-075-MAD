@@ -3,10 +3,10 @@ import 'dart:math';
 void main() {
   runApp(MaterialApp(
     home: Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.teal,
       appBar: AppBar(
         title: Text('Dicee'),
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.tealAccent,
       ),
       body: LudoPage(),
     ),
