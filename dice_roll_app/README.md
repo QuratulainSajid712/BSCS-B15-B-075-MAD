@@ -1,7 +1,7 @@
-# dice_roll_app
+# dice_roll_app  
 
-A new Flutter application.
-
+**Completed Dice Roll App
+**
 ## Getting Started
 
 This project is a starting point for a Flutter application.
