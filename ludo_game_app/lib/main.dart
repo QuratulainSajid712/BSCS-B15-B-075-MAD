@@ -5,7 +5,7 @@ void main() {
     home: Scaffold(
       backgroundColor: Colors.teal,
       appBar: AppBar(
-        title: Text('Dicee'),
+        title: Text('Ludo Game'),
         backgroundColor: Colors.tealAccent,
       ),
       body: LudoPage(),
@@ -19,12 +19,15 @@ class LudoPage extends StatefulWidget {
 
 class _LudoPageState extends State<LudoPage>{
  int  left_image=1;
+ int  left_image1=1;
  int right_image=1;
+ int right_image1=1;
   @override
   Widget build(BuildContext context) {
-    Center(
+  return  Center(
         child: Row(
             children: [
+
         Expanded(
         child: FlatButton(
         onPressed: () {
@@ -44,6 +47,26 @@ class _LudoPageState extends State<LudoPage>{
                         print('Dice2_Value$right_image');
                       },
                       child: Image.asset('images/dice$right_image.png'))
+              ),
+              Expanded(
+                  child: FlatButton(
+                      onPressed: () {
+                        setState(() {
+                          left_image1 = Random().nextInt(6)+1;
+                        });
+                        print('Dice3_Value$left_image1');
+                      },
+                      child: Image.asset('images/dice$left_image1.png'))
+              ),
+              Expanded(
+                  child: FlatButton(
+                      onPressed: () {
+                        setState(() {
+                          right_image1 =Random().nextInt(6)+1;
+                        });
+                        print('Dice4_Value$right_image1');
+                      },
+                      child: Image.asset('images/dice$right_image1.png'))
               ),
             ],
         ),
