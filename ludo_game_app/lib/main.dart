@@ -10,6 +10,17 @@ void main() {
       ),
       body: LudoPage(),
     ),
-  )););
+  ));
+}
+class LudoPage extends StatefulWidget {
+  @override
+  _LudoPageState createState() => _LudoPageState();
+}
+
+class _LudoPageState extends State<LudoPage>{
+  @override
+  Widget build(BuildContext context) {
+
+  }
 }
 
