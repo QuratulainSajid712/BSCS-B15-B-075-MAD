@@ -89,6 +89,7 @@ class _LudoPageState extends State<LudoPage>{
           onPressed: () {
             setState(() {
               right_image1 =Random().nextInt(6)+1;
+              fourthdice();
             });
             print('Dice4_Value$right_image1');
           },
