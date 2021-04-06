@@ -23,6 +23,10 @@ class _LudoPageState extends State<LudoPage>{
  int  left_image1=1;
  int right_image=1;
  int right_image1=1;
+ int dice1=0;
+ int dice2=0;
+ int dice3=0;
+ int dice4=0;
   @override
   Widget build(BuildContext context) {
   return  Center(
@@ -30,10 +34,13 @@ class _LudoPageState extends State<LudoPage>{
           mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('Dice_1 Score: ' , style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
-              Text('Dice_2 Score: ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
-              Text('Dice_3 Score: ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
-              Text('Dice_4 Score: ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
               SizedBox(height: 10,),
+              Text('Dice_2 Score: ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
+              SizedBox(height: 10,),
+              Text('Dice_3 Score: ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
+              SizedBox(height: 10,),
+              Text('Dice_4 Score: ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
+              SizedBox(height: 20,),
               Row(
                 children: [
                   Expanded(
