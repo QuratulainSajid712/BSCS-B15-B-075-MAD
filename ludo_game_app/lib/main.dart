@@ -28,10 +28,10 @@ class _LudoPageState extends State<LudoPage>{
   return  Center(
         child: Column(
             children: [
-              Text('Dice_1: ' , style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),),
-              Text('Dice_2: '),
-              Text('Dice_3: '),
-              Text('Dice_4: '),
+              Text('Dice_1 Score: ' , style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),),
+              Text('Dice_2 Score: ', style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),),
+              Text('Dice_3 Score: ', style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),),
+              Text('Dice_4 Score: ', style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),),
               SizedBox(height: 10,),
               Row(
                 children: [Expanded(
