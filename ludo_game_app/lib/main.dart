@@ -41,7 +41,7 @@ class _LudoPageState extends State<LudoPage>{
               SizedBox(height: 10,),
               Text('Dice_2 Score: $totaldice2 ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
               SizedBox(height: 10,),
-              Text('Dice_3 Score: ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
+              Text('Dice_3 Score: $totaldice3', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
               SizedBox(height: 10,),
               Text('Dice_4 Score: ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
               SizedBox(height: 20,),
@@ -116,6 +116,15 @@ class _LudoPageState extends State<LudoPage>{
      totaldice2= totaldice2 + right_image;
    }
  }
+ void thirddice(){
+   if(left_image1>6){
+     print('Out');
+   }
+   else{
+     totaldice3= totaldice3 + left_image1;
+   }
+ }
+
 
 }
 
