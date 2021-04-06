@@ -28,7 +28,7 @@ class _LudoPageState extends State<LudoPage>{
         child: Column(
             children: [
               Text('Dice_1: '),
-              
+              Text('Dice_2: '),
               SizedBox(height: 60,),
               Row(
                 children: [Expanded(
