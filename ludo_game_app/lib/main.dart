@@ -19,7 +19,10 @@ class LudoPage extends StatefulWidget {
 }
 
 class _LudoPageState extends State<LudoPage>{
-int number =1;
+int left_image=1;
+int right_image=1;
+int left_image1=1;
+int right_image1=1;
  int totaldice1=0;
  int totaldice2=0;
  int totaldice3=0;
@@ -50,23 +53,23 @@ int number =1;
                     child: FlatButton(
                         onPressed: () {
                           setState(() {
-                            number = Random().nextInt(6)+1;
+                            left_image = Random().nextInt(6)+1;
                             firstdice();
                           });
-                          print('Dice1_Value$number');
+                          print('Dice1_Value$left_image');
                         },
-                        child: Image.asset('images/dice$number.png', width: 200, height: 150,))
+                        child: Image.asset('images/dice$left_image.png', width: 200, height: 150,))
                 ),
                   Expanded(
                       child: FlatButton(
                           onPressed: () {
                             setState(() {
-                              number=Random().nextInt(6)+1;
+                              right_image=Random().nextInt(6)+1;
                               seconddice();
                             });
-                            print('Dice2_Value$number');
+                            print('Dice2_Value$right_image');
                           },
-                          child: Image.asset('images/dice$number.png', width: 200, height: 150,))
+                          child: Image.asset('images/dice$right_image.png', width: 200, height: 150,))
                   ),],
               ),
               SizedBox(height: 10,),
@@ -76,23 +79,23 @@ int number =1;
           child: FlatButton(
            onPressed: () {
           setState(() {
-            number = Random().nextInt(6)+1;
+            left_image1 = Random().nextInt(6)+1;
             thirddice();
           });
-          print('Dice3_Value$number',);
+          print('Dice3_Value$left_image1',);
         },
-        child: Image.asset('images/dice$number.png', width: 200, height: 150,))
+        child: Image.asset('images/dice$left_image1.png', width: 200, height: 150,))
 ),
               Expanded(
       child: FlatButton(
           onPressed: () {
             setState(() {
-              number =Random().nextInt(6)+1;
+              right_image1 =Random().nextInt(6)+1;
               fourthdice();
             });
-            print('Dice4_Value$number');
+            print('Dice4_Value$right_image1');
           },
-          child: Image.asset('images/dice$number.png', width: 200, height: 150,))
+          child: Image.asset('images/dice$right_image1.png', width: 200, height: 150,))
   ),
         ],
       ),
@@ -104,44 +107,37 @@ int number =1;
   );
   }
   void firstdice(){
-    if(number>6){
+    if(left_image>6){
       print('Out');
       dice1out=true;
     }
     else{
-      totaldice1= totaldice1 + number;
+      totaldice1= totaldice1 + left_image;
     }
   }
  void seconddice(){
-   if(number>6){
-     if(totaldice1==totaldice2 && totaldice2==totaldice3 && totaldice3==totaldice4) {
-       print('Same Score of All Dices');
-     }
-     else {
-       print('Dice 1 Wins');
-     }
-     
+   if(right_image>6){
      print('Out');
    }
    else{
-     totaldice2= totaldice2 + number;
+     totaldice2= totaldice2 + right_image ;
    }
  }
  void thirddice(){
-   if(number>6){
+   if(left_image1>6){
      print('Out');
    }
    else{
-     totaldice3= totaldice3 + number;
+     totaldice3= totaldice3 + left_image1;
    }
  }
  void fourthdice(){
-   if(number>6){
+   if(right_image1>6){
      print('Out');
 
    }
    else{
-     totaldice4= totaldice4 + number;
+     totaldice4= totaldice4 + right_image1;
    }
  }
 }
