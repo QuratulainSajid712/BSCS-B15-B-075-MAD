@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 void main() {
@@ -27,7 +28,7 @@ class _LudoPageState extends State<LudoPage>{
   return  Center(
         child: Column(
             children: [
-              Text('Dice_1: '),
+              Text('Dice_1: ' , style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),),
               Text('Dice_2: '),
               Text('Dice_3: '),
               Text('Dice_4: '),
@@ -54,7 +55,7 @@ class _LudoPageState extends State<LudoPage>{
                           child: Image.asset('images/dice$right_image.png'))
                   ),],
               ),
-SizedBox(height: 20,),
+SizedBox(height: 10,),
 Row(children: [  Expanded(
     child: FlatButton(
         onPressed: () {
