@@ -27,6 +27,7 @@ class _LudoPageState extends State<LudoPage>{
   return  Center(
         child: Column(
             children: [
+              Text('Dice_1: '),
               
               SizedBox(height: 60,),
               Row(
