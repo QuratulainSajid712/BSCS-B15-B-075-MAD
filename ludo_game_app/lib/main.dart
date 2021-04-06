@@ -27,6 +27,10 @@ class _LudoPageState extends State<LudoPage>{
  int dice2=0;
  int dice3=0;
  int dice4=0;
+ bool totaldice1=false;
+ bool totaldice2=false;
+ bool totaldice3=false;
+ bool totaldice4=false;
   @override
   Widget build(BuildContext context) {
   return  Center(
