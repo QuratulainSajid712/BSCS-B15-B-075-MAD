@@ -78,6 +78,7 @@ class _LudoPageState extends State<LudoPage>{
            onPressed: () {
           setState(() {
             left_image1 = Random().nextInt(6)+1;
+            thirddice();
           });
           print('Dice3_Value$left_image1',);
         },
