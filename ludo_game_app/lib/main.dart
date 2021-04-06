@@ -23,21 +23,21 @@ class _LudoPageState extends State<LudoPage>{
  int  left_image1=1;
  int right_image=1;
  int right_image1=1;
- int dice1=0;
- int dice2=0;
- int dice3=0;
- int dice4=0;
- bool totaldice1=false;
- bool totaldice2=false;
- bool totaldice3=false;
- bool totaldice4=false;
+ int totaldice1=0;
+ int totaldice2=0;
+ int totaldice3=0;
+ int totaldice4=0;
+ bool dice1out=false;
+ bool dice2out=false;
+ bool dice3out=false;
+ bool dice4out=false;
   @override
   Widget build(BuildContext context) {
   return  Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Dice_1 Score: ' , style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
+              Text('Dice_1 Score: $totaldice1 ' , style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
               SizedBox(height: 10,),
               Text('Dice_2 Score: ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
               SizedBox(height: 10,),
@@ -99,6 +99,14 @@ class _LudoPageState extends State<LudoPage>{
         ],
         ),
   );
+  }
+  void firstdice(){
+    if(left_image>6){
+      print('Out');
+    }
+    else{
+      totaldice1= totaldice1 + left_image;
+    }
   }
 }
 
