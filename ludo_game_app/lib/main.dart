@@ -109,6 +109,7 @@ class _LudoPageState extends State<LudoPage>{
   void firstdice(){
     if(left_image>6){
       print('Out');
+      dice1out=true;
     }
     else{
       totaldice1= totaldice1 + left_image;
@@ -133,6 +134,7 @@ class _LudoPageState extends State<LudoPage>{
  void fourthdice(){
    if(right_image1>6){
      print('Out');
+
    }
    else{
      totaldice4= totaldice4 + right_image1;
