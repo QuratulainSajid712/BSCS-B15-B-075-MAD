@@ -27,14 +27,16 @@ class _LudoPageState extends State<LudoPage>{
   Widget build(BuildContext context) {
   return  Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Dice_1 Score: ' , style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),),
-              Text('Dice_2 Score: ', style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),),
-              Text('Dice_3 Score: ', style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),),
-              Text('Dice_4 Score: ', style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),),
+              Text('Dice_1 Score: ' , style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
+              Text('Dice_2 Score: ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
+              Text('Dice_3 Score: ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
+              Text('Dice_4 Score: ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
               SizedBox(height: 10,),
               Row(
-                children: [Expanded(
+                children: [
+                  Expanded(
                     child: FlatButton(
                         onPressed: () {
                           setState(() {
@@ -42,7 +44,7 @@ class _LudoPageState extends State<LudoPage>{
                           });
                           print('Dice1_Value$left_image');
                         },
-                        child: Image.asset('images/dice$left_image.png'))
+                        child: Image.asset('images/dice$left_image.png', width: 200, height: 150,))
                 ),
                   Expanded(
                       child: FlatButton(
@@ -52,21 +54,23 @@ class _LudoPageState extends State<LudoPage>{
                             });
                             print('Dice2_Value$right_image');
                           },
-                          child: Image.asset('images/dice$right_image.png'))
+                          child: Image.asset('images/dice$right_image.png', width: 200, height: 150,))
                   ),],
               ),
-SizedBox(height: 10,),
-Row(children: [  Expanded(
-    child: FlatButton(
-        onPressed: () {
+              SizedBox(height: 10,),
+              Row(
+        children: [
+          Expanded(
+          child: FlatButton(
+           onPressed: () {
           setState(() {
             left_image1 = Random().nextInt(6)+1;
           });
-          print('Dice3_Value$left_image1');
+          print('Dice3_Value$left_image1',);
         },
-        child: Image.asset('images/dice$left_image1.png'))
+        child: Image.asset('images/dice$left_image1.png', width: 200, height: 150,))
 ),
-  Expanded(
+       Expanded(
       child: FlatButton(
           onPressed: () {
             setState(() {
@@ -74,8 +78,12 @@ Row(children: [  Expanded(
             });
             print('Dice4_Value$right_image1');
           },
-          child: Image.asset('images/dice$right_image1.png'))
-  ),],)
+          child: Image.asset('images/dice$right_image1.png', width: 200, height: 150,))
+  ),
+        ],
+      ),
+              SizedBox(height: 20,),
+              RaisedButton(child: Text('Reset'),onPressed: (){}),
 
         ],
         ),
