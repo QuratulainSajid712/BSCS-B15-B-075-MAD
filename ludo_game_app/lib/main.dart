@@ -31,6 +31,7 @@ int right_image1=1;
  bool dice2out=false;
  bool dice3out=false;
  bool dice4out=false;
+ int totalclicks=10;
   @override
   Widget build(BuildContext context) {
   return  Center(
@@ -100,23 +101,56 @@ int right_image1=1;
         ],
       ),
               SizedBox(height: 20,),
-              RaisedButton(child: Text('Reset'),onPressed: (){}),
-
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: RaisedButton(
+        child: Text('Reset'),
+        onPressed: () {
+          setState(() {
+            totaldice1 = 0;
+            totaldice2= 0;
+            totaldice3= 0;
+            totaldice4= 0;
+            dice1out = false;
+            dice2out=false;
+            dice3out=false;
+            dice4out=false;
+            left_image1 = 1;
+            left_image=1;
+            right_image1=1;
+            right_image=1;
+          });
+        },
+      ),
+    ),
         ],
         ),
   );
   }
+  
   void firstdice(){
-    if(left_image>6){
-      print('Out');
-      dice1out=true;
-    }
-    else{
-      totaldice1= totaldice1 + left_image;
-    }
+
+  if (totalclicks > 10) {
+    print('Out');
+    dice1out = true;
+  }
+  else {
+    totaldice1 = totaldice1 + left_image;
+  }
   }
  void seconddice(){
    if(right_image>6){
+     right_image = 1;
+     if (totaldice1 == totaldice2) {
+       showResultDialog('Match Tied');
+     } else {
+       showResultDialog('First Player Wins');
+     }
+   } else {
+     totalSecondPlayer = totalSecondPlayer + diceNumber;
+     if (totalSecondPlayer > totalFirstPlayer) {
+       showResultDialog('Second Player Wins');
+     }
      print('Out');
    }
    else{
