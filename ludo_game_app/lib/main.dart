@@ -25,52 +25,58 @@ class _LudoPageState extends State<LudoPage>{
   @override
   Widget build(BuildContext context) {
   return  Center(
-        child: Row(
+        child: Column(
             children: [
-
-        Expanded(
-        child: FlatButton(
+              
+              SizedBox(height: 60,),
+              Row(
+                children: [Expanded(
+                    child: FlatButton(
+                        onPressed: () {
+                          setState(() {
+                            left_image = Random().nextInt(6)+1;
+                          });
+                          print('Dice1_Value$left_image');
+                        },
+                        child: Image.asset('images/dice$left_image.png'))
+                ),
+                  Expanded(
+                      child: FlatButton(
+                          onPressed: () {
+                            setState(() {
+                              right_image=Random().nextInt(6)+1;
+                            });
+                            print('Dice2_Value$right_image');
+                          },
+                          child: Image.asset('images/dice$right_image.png'))
+                  ),],
+              ),
+SizedBox(height: 20,),
+Row(children: [  Expanded(
+    child: FlatButton(
         onPressed: () {
-    setState(() {
-    left_image = Random().nextInt(6)+1;
-    });
-    print('Dice1_Value$left_image');
-    },
-        child: Image.asset('images/dice$left_image.png'))
-    ),
-              Expanded(
-                  child: FlatButton(
-                      onPressed: () {
-                        setState(() {
-                          right_image=Random().nextInt(6)+1;
-                        });
-                        print('Dice2_Value$right_image');
-                      },
-                      child: Image.asset('images/dice$right_image.png'))
-              ),
-              Expanded(
-                  child: FlatButton(
-                      onPressed: () {
-                        setState(() {
-                          left_image1 = Random().nextInt(6)+1;
-                        });
-                        print('Dice3_Value$left_image1');
-                      },
-                      child: Image.asset('images/dice$left_image1.png'))
-              ),
-              Expanded(
-                  child: FlatButton(
-                      onPressed: () {
-                        setState(() {
-                          right_image1 =Random().nextInt(6)+1;
-                        });
-                        print('Dice4_Value$right_image1');
-                      },
-                      child: Image.asset('images/dice$right_image1.png'))
-              ),
-            ],
+          setState(() {
+            left_image1 = Random().nextInt(6)+1;
+          });
+          print('Dice3_Value$left_image1');
+        },
+        child: Image.asset('images/dice$left_image1.png'))
+),
+  Expanded(
+      child: FlatButton(
+          onPressed: () {
+            setState(() {
+              right_image1 =Random().nextInt(6)+1;
+            });
+            print('Dice4_Value$right_image1');
+          },
+          child: Image.asset('images/dice$right_image1.png'))
+  ),],)
+
+        ],
         ),
-    );
+  );
   }
 }
+
 
