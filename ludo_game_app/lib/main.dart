@@ -37,13 +37,13 @@ class _LudoPageState extends State<LudoPage>{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Dice_1 Score: $totaldice1 ' , style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
+              Text('Dice_1 Score : $totaldice1 ' , style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
               SizedBox(height: 10,),
-              Text('Dice_2 Score: $totaldice2 ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
+              Text('Dice_2 Score : $totaldice2 ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
               SizedBox(height: 10,),
-              Text('Dice_3 Score: $totaldice3', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
+              Text('Dice_3 Score : $totaldice3', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
               SizedBox(height: 10,),
-              Text('Dice_4 Score: $totaldice4', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
+              Text('Dice_4 Score : $totaldice4', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
               SizedBox(height: 20,),
               Row(
                 children: [
@@ -52,6 +52,7 @@ class _LudoPageState extends State<LudoPage>{
                         onPressed: () {
                           setState(() {
                             left_image = Random().nextInt(6)+1;
+                            firstdice();
                           });
                           print('Dice1_Value$left_image');
                         },
