@@ -37,6 +37,8 @@ class _LudoPageState extends State<LudoPage>{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text('Total Clicks: 10',textAlign: TextAlign.center,style: TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.bold),),
+              SizedBox(height: 20,),
               Text('Dice_1 Score : $totaldice1 ' , style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
               SizedBox(height: 10,),
               Text('Dice_2 Score : $totaldice2 ', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
@@ -73,7 +75,7 @@ class _LudoPageState extends State<LudoPage>{
               SizedBox(height: 10,),
               Row(
         children: [
-          Expanded(
+              Expanded(
           child: FlatButton(
            onPressed: () {
           setState(() {
@@ -84,7 +86,7 @@ class _LudoPageState extends State<LudoPage>{
         },
         child: Image.asset('images/dice$left_image1.png', width: 200, height: 150,))
 ),
-       Expanded(
+              Expanded(
       child: FlatButton(
           onPressed: () {
             setState(() {
