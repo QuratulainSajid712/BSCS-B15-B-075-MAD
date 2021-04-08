@@ -70,7 +70,6 @@ class _LudoPageState extends State<LudoPage> {
                       onPressed: () {
                         setState(() {
                           firstdice();
-
                         });
                         print('Dice1_Value$left_image');
                       },
@@ -81,7 +80,6 @@ class _LudoPageState extends State<LudoPage> {
                   child: FlatButton(
                       onPressed: () {
                         setState(() {
-                          right_image = Random().nextInt(6) + 1;
                           seconddice();
                         });
                         print('Dice2_Value$right_image');
@@ -99,7 +97,6 @@ class _LudoPageState extends State<LudoPage> {
                   child: FlatButton(
                       onPressed: () {
                         setState(() {
-                          left_image1 = Random().nextInt(6) + 1;
                           thirddice();
                         });
                         print('Dice3_Value$left_image1',);
@@ -112,7 +109,6 @@ class _LudoPageState extends State<LudoPage> {
                   child: FlatButton(
                       onPressed: () {
                         setState(() {
-                          right_image1 = Random().nextInt(6) + 1;
                           fourthdice();
                         });
                         print('Dice4_Value$right_image1');
@@ -229,7 +225,13 @@ class _LudoPageState extends State<LudoPage> {
       if (limit > 0) {
         limit = limit - 1;
       };
-      
+      if (dice1count == 10 &&
+          dice2count == 10 &&
+          dice3count == 10 &&
+          dice4count == 10) {
+        showResultDialog();
+      }
+      }
 }
     void thirddice() {
       if (left_image1 > 6) {
