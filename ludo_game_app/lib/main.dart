@@ -19,6 +19,9 @@ class LudoPage extends StatefulWidget {
 }
 
 class _LudoPageState extends State<LudoPage> {
+  int total=0;
+  int winner=0;
+  int winn=0;
   int left_image = 1;
   int right_image = 1;
   int left_image1 = 1;
@@ -31,7 +34,11 @@ class _LudoPageState extends State<LudoPage> {
   bool dice2out = false;
   bool dice3out = false;
   bool dice4out = false;
-  int totalclicks = 10;
+  int limit = 10;
+  int dice1count = 0;
+  int dice2count = 0;
+  int dice3count = 0;
+  int dice4count = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +46,7 @@ class _LudoPageState extends State<LudoPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Total Clicks: 10', textAlign: TextAlign.center,
+          Text('Total Clicks: $limit', textAlign: TextAlign.center,
             style: TextStyle(fontSize: 24,
                 color: Colors.black,
                 fontWeight: FontWeight.bold),),
@@ -62,8 +69,8 @@ class _LudoPageState extends State<LudoPage> {
                   child: FlatButton(
                       onPressed: () {
                         setState(() {
-                          left_image = Random().nextInt(6) + 1;
                           firstdice();
+                          
                         });
                         print('Dice1_Value$left_image');
                       },
@@ -145,19 +152,47 @@ class _LudoPageState extends State<LudoPage> {
   }
 
   void firstdice() {
-    if (left_image >6) {
-      print('Out');
-      dice1out = true;
-    }
-    else {
+    if (dice1count < 10) {
+      left_image = Random().nextInt(6) + 1;
       totaldice1 = totaldice1 + left_image;
+      dice1count = dice1count + 1;
+      total = total + left_image;
+    };
+    if (totaldice1 > totaldice2 &&
+        totaldice1 > totaldice3 &&
+        totaldice1 > totaldice4) {
+      winner = totaldice1;
+      winn = 1;
+    } else if (totaldice2 > totaldice1 &&
+        totaldice2 > totaldice3 &&
+        totaldice2 > totaldice4) {
+      winner = totaldice2;
+      winn = 2;
+    } else if (totaldice3 > totaldice1 &&
+        totaldice3 > totaldice2 &&
+        totaldice3 > totaldice4) {
+      winner = totaldice3;
+      winn = 3;
+    } else {
+      winner = totaldice4;
+      winn = 4;
     }
+    ;
+    if (dice2count >= dice1count &&
+        dice3count >= dice1count &&
+        dice4count >= dice1count) {
+      if (limit > 0) {
+        limit = limit - 1;
+      }
+    }
+    ;
   }
 
   void seconddice() {
-    if (right_image > 6) {
+    if (dice2count >=10) {
       right_image = 1;
-      if (totaldice1 == totaldice2) {
+      print('Dice 2 Out');
+      if (totaldice1 == totaldice2&& totaldice1==totaldice3&&totaldice1==totaldice4) {
         showResultDialog('Match Tied');
       }
       else {
@@ -187,7 +222,24 @@ class _LudoPageState extends State<LudoPage> {
         totaldice4 = totaldice4 + right_image1;
       }
     }
-
+  void showDiceOutDialog() async {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('You are out!!!'),
+            content: Image.asset('images/out.png'),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('ok'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
+  }
     void showResultDialog(String playerName) async {
       return showDialog(
           context: context,
@@ -205,6 +257,7 @@ class _LudoPageState extends State<LudoPage> {
               ],
             );
           });
+
     }
   }
 
