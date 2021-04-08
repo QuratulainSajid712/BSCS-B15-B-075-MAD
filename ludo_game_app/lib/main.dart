@@ -48,12 +48,12 @@ class _LudoPageState extends State<LudoPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          
+          SizedBox(height: 10,),
           Text('Total Clicks: $limit', textAlign: TextAlign.center,
             style: TextStyle(fontSize: 24,
                 color: Colors.black,
                 fontWeight: FontWeight.bold),),
-          SizedBox(height: 20,),
+          SizedBox(height: 10,),
           Text('Dice_1 Score : $totaldice1 ', style: TextStyle(
               fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
           SizedBox(height: 10,),
