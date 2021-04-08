@@ -342,8 +342,8 @@ class _LudoPageState extends State<LudoPage> {
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('Winner: Dice $winn'
-                  'Points: $winner points'),
+              title: Text('Winner: Dice $winn \n'
+                'Points: $winner points'),
               content: Image.asset('images/out.png'),
               actions: <Widget>[
                 FlatButton(
