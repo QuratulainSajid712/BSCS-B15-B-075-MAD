@@ -70,7 +70,7 @@ class _LudoPageState extends State<LudoPage> {
                       onPressed: () {
                         setState(() {
                           firstdice();
-                          
+
                         });
                         print('Dice1_Value$left_image');
                       },
@@ -130,6 +130,9 @@ class _LudoPageState extends State<LudoPage> {
               child: Text('Reset'),
               onPressed: () {
                 setState(() {
+                  total = 0;
+                  winner = 0;
+                  winn = 0;
                   totaldice1 = 0;
                   totaldice2 = 0;
                   totaldice3 = 0;
@@ -184,27 +187,16 @@ class _LudoPageState extends State<LudoPage> {
       if (limit > 0) {
         limit = limit - 1;
       }
+    };
+    if (dice1count == 10 &&
+        dice2count == 10 &&
+        dice3count == 10 &&
+        dice4count == 10) {
+      showResultDialog();
     }
-    ;
   }
 
   void seconddice() {
-    if (dice2count >=10) {
-      right_image = 1;
-      print('Dice 2 Out');
-      if (totaldice1 == totaldice2&& totaldice1==totaldice3&&totaldice1==totaldice4) {
-        showResultDialog('Match Tied');
-      }
-      else {
-        showResultDialog('First Player Wins');
-      }
-    }
-    else {
-      totaldice2 = totaldice2 + right_image;
-      if (totaldice2 > totaldice1) {
-        showResultDialog('Second Player Wins');
-      }
-    }
 }
     void thirddice() {
       if (left_image1 > 6) {
@@ -240,13 +232,13 @@ class _LudoPageState extends State<LudoPage> {
           );
         });
   }
-    void showResultDialog(String playerName) async {
+    void showResultDialog() async {
       return showDialog(
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('Win!!!'),
-              content: Text(playerName),
+              title: Text('Winner: Dice $winn'),
+              content: Text('Points: $winner points'),
               actions: <Widget>[
                 FlatButton(
                   child: Text('ok'),
