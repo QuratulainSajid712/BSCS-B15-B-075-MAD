@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: Scaffold(
+
       backgroundColor: Colors.teal,
       appBar: AppBar(
-        title: Text('Ludo Game'),
+        title: Text('Ludo Game',textAlign: TextAlign.center, style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
         backgroundColor: Colors.tealAccent,
       ),
       body: LudoPage(),
@@ -46,6 +48,7 @@ class _LudoPageState extends State<LudoPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          
           Text('Total Clicks: $limit', textAlign: TextAlign.center,
             style: TextStyle(fontSize: 24,
                 color: Colors.black,
