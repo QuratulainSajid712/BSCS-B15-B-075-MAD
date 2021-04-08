@@ -277,11 +277,46 @@ class _LudoPageState extends State<LudoPage> {
       }
     }
     void fourthdice() {
-      if (right_image1 > 6) {
-        print('Out');
-      }
-      else {
+      if (dice4count < 10) {
+        right_image1 = Random().nextInt(6) + 1;
         totaldice4 = totaldice4 + right_image1;
+        dice4count = dice4count + 1;
+        total = total + right_image1;
+      }
+      ;
+      if (totaldice1 > totaldice2 &&
+          totaldice1 > totaldice3 &&
+          totaldice1 > totaldice4) {
+        winner = totaldice1;
+        winn = 1;
+      } else if (totaldice2 > totaldice1 &&
+          totaldice2 > totaldice3 &&
+          totaldice2 > totaldice4) {
+        winner = totaldice2;
+        winn = 2;
+      } else if (totaldice3 > totaldice1 &&
+          totaldice3 > totaldice2 &&
+          totaldice3 > totaldice4) {
+        winner = totaldice3;
+        winn = 3;
+      } else {
+        winner = totaldice4;
+        winn = 4;
+      }
+      ;
+      if (dice2count >= dice4count &&
+          dice3count >= dice4count &&
+          dice1count >= dice4count) {
+        if (limit > 0) {
+          limit = limit - 1;
+        }
+      }
+      ;
+      if (dice1count == 10 &&
+          dice2count == 10 &&
+          dice3count == 10 &&
+          dice4count == 10) {
+        showResultDialog();
       }
     }
   void showDiceOutDialog() async {
