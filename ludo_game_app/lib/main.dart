@@ -197,6 +197,39 @@ class _LudoPageState extends State<LudoPage> {
   }
 
   void seconddice() {
+    if (dice2count < 10) {
+      right_image = Random().nextInt(6) + 1;
+      totaldice2 = totaldice2 + right_image;
+      dice2count = dice2count + 1;
+      total = total + right_image;
+    }
+    ;
+    if (totaldice1 > totaldice2 &&
+        totaldice1 > totaldice3 &&
+        totaldice1 > totaldice4) {
+      winner = totaldice1;
+      winn = 1;
+    } else if (totaldice2 > totaldice1 &&
+        totaldice2 > totaldice3 &&
+        totaldice2 > totaldice4) {
+      winner = totaldice2;
+      winn = 2;
+    } else if (totaldice3 > totaldice1 &&
+        totaldice3 > totaldice2 &&
+        totaldice3 > totaldice4) {
+      winner = totaldice3;
+      winn = 3;
+    } else {
+      winner = totaldice4;
+      winn = 4;
+    };
+    if (dice1count >= dice2count &&
+        dice3count >= dice2count &&
+        dice4count >= dice2count) {
+      if (limit > 0) {
+        limit = limit - 1;
+      };
+      
 }
     void thirddice() {
       if (left_image1 > 6) {
