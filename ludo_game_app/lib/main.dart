@@ -156,7 +156,7 @@ class _LudoPageState extends State<LudoPage> {
     );
   }
 
-  void firstdice() {
+   void firstdice() {
     if (dice1count < 10) {
       if(flag==1) {
         left_image = Random().nextInt(6) + 1;
@@ -204,7 +204,7 @@ class _LudoPageState extends State<LudoPage> {
 
   }
 
-  void seconddice() {
+   void seconddice() {
     if (dice2count < 10) {
       if(flag==2){
         right_image = Random().nextInt(6) + 1;
