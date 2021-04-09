@@ -206,12 +206,16 @@ class _LudoPageState extends State<LudoPage> {
 
   void seconddice() {
     if (dice2count < 10) {
-      right_image = Random().nextInt(6) + 1;
-      totaldice2 = totaldice2 + right_image;
-      dice2count = dice2count + 1;
-      total = total + right_image;
-    }
-    ;
+      if(flag==2){
+        right_image = Random().nextInt(6) + 1;
+        totaldice2 = totaldice2 + right_image;
+        total = total + right_image;
+      }
+      if(flag!=6){
+        dice2count = dice2count + 1;
+        flag=flag+1;
+      }
+    };
     if (totaldice1 > totaldice2 &&
         totaldice1 > totaldice3 &&
         totaldice1 > totaldice4) {
