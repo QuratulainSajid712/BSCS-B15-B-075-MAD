@@ -21,6 +21,7 @@ class LudoPage extends StatefulWidget {
 }
 
 class _LudoPageState extends State<LudoPage> {
+  int flag=1;
   int total=0;
   int winner=0;
   int winn=0;
@@ -41,6 +42,7 @@ class _LudoPageState extends State<LudoPage> {
   int dice2count = 0;
   int dice3count = 0;
   int dice4count = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -74,6 +76,7 @@ class _LudoPageState extends State<LudoPage> {
                         setState(() {
                           firstdice();
                         });
+
                         print('Dice1_Value$left_image');
                       },
                       child: Image.asset(
@@ -155,10 +158,15 @@ class _LudoPageState extends State<LudoPage> {
 
   void firstdice() {
     if (dice1count < 10) {
-      left_image = Random().nextInt(6) + 1;
-      totaldice1 = totaldice1 + left_image;
+      if(flag==1){
+        left_image = Random().nextInt(6) + 1;
+        totaldice1 = totaldice1 + left_image;
+        total = total + left_image;
+      }
+      if(flag!=6){
       dice1count = dice1count + 1;
-      total = total + left_image;
+      flag=flag+1;
+      }
     };
     if (totaldice1 > totaldice2 &&
         totaldice1 > totaldice3 &&
@@ -193,6 +201,7 @@ class _LudoPageState extends State<LudoPage> {
         dice4count == 10) {
       showResultDialog();
     }
+
   }
 
   void seconddice() {
@@ -346,8 +355,8 @@ class _LudoPageState extends State<LudoPage> {
           builder: (BuildContext context) {
             return AlertDialog(
               title: Text('Winner: Dice $winn \n''Points: $winner points \n \n'
-                  'Dice $winn Outs All Dices'),
-              content: Image.asset('images/out.png'),
+                'Dice $winn Outs All Dices'),
+              content: Image.asset('images/out.png', ),
               actions: <Widget>[
                 FlatButton(
                   child: Text('ok'),
