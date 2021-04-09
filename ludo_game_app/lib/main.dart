@@ -161,6 +161,7 @@ class _LudoPageState extends State<LudoPage> {
       if(flag==1){
         left_image = Random().nextInt(6) + 1;
         totaldice1 = totaldice1 + left_image;
+        dice1count = dice1count + 1;
         total = total + left_image;
       }
       if(flag!=6){
@@ -209,6 +210,7 @@ class _LudoPageState extends State<LudoPage> {
       if(flag==2){
         right_image = Random().nextInt(6) + 1;
         totaldice2 = totaldice2 + right_image;
+        dice2count = dice2count + 1;
         total = total + right_image;
       }
       if(flag!=6){
