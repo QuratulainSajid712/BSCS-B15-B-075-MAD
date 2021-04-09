@@ -158,15 +158,14 @@ class _LudoPageState extends State<LudoPage> {
 
   void firstdice() {
     if (dice1count < 10) {
-      if(flag==1){
+      if(flag==1) {
         left_image = Random().nextInt(6) + 1;
         totaldice1 = totaldice1 + left_image;
-        dice1count = dice1count + 1;
         total = total + left_image;
-      }
-      if(flag!=6){
-      dice1count = dice1count + 1;
-      flag=flag+1;
+        if (left_image != 6) {
+          dice1count = dice1count + 1;
+          flag = flag + 1;
+        }
       }
     };
     if (totaldice1 > totaldice2 &&
@@ -210,12 +209,12 @@ class _LudoPageState extends State<LudoPage> {
       if(flag==2){
         right_image = Random().nextInt(6) + 1;
         totaldice2 = totaldice2 + right_image;
-        dice2count = dice2count + 1;
+
         total = total + right_image;
-      }
-      if(flag!=6){
+      if(right_image!=6){
         dice2count = dice2count + 1;
         flag=flag+1;
+      }
       }
     };
     if (totaldice1 > totaldice2 &&
@@ -253,12 +252,16 @@ class _LudoPageState extends State<LudoPage> {
 }
     void thirddice() {
       if (dice3count < 10) {
+        if(flag==3){
         left_image1 = Random().nextInt(6) + 1;
         totaldice3 = totaldice3 + left_image1;
-        dice3count = dice3count + 1;
         total = total + left_image1;
-      }
-      ;
+        if(left_image1!=6){
+          dice3count = dice3count + 1;
+          flag=flag+1;
+        }
+        }
+      };
       if (totaldice1 > totaldice2 &&
           totaldice1 > totaldice3 &&
           totaldice1 > totaldice4) {
@@ -296,10 +299,15 @@ class _LudoPageState extends State<LudoPage> {
     }
     void fourthdice() {
       if (dice4count < 10) {
-        right_image1 = Random().nextInt(6) + 1;
-        totaldice4 = totaldice4 + right_image1;
-        dice4count = dice4count + 1;
-        total = total + right_image1;
+        if(flag==4) {
+          right_image1 = Random().nextInt(6) + 1;
+          totaldice4 = totaldice4 + right_image1;
+          total = total + right_image1;
+          if(right_image1!=6){
+            dice4count = dice4count + 1;
+            flag=1;
+          }
+        }
       }
       ;
       if (totaldice1 > totaldice2 &&
