@@ -12,8 +12,9 @@ class XylophoneApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Center(
-            child: new FlatButton(
+          child: Column(
+            children:[
+              FlatButton(
               color: Colors.blue,
               onPressed: (){
                 final play=AudioCache();
@@ -21,7 +22,55 @@ class XylophoneApp extends StatelessWidget {
                 },
               child: Text('Play'),
           ),
-
+              FlatButton(
+                color: Colors.blue,
+                onPressed: (){
+                  final play=AudioCache();
+                  play.play('note2.wav');
+                },
+                child: Text('Play'),
+              ),
+              FlatButton(
+                color: Colors.blue,
+                onPressed: (){
+                  final play=AudioCache();
+                  play.play('note3.wav');
+                },
+                child: Text('Play'),
+              ),
+              FlatButton(
+                color: Colors.blue,
+                onPressed: (){
+                  final play=AudioCache();
+                  play.play('note4.wav');
+                },
+                child: Text('Play'),
+              ),
+              FlatButton(
+                color: Colors.blue,
+                onPressed: (){
+                  final play=AudioCache();
+                  play.play('note5.wav');
+                },
+                child: Text('Play'),
+              ),
+              FlatButton(
+                color: Colors.blue,
+                onPressed: (){
+                  final play=AudioCache();
+                  play.play('note6.wav');
+                },
+                child: Text('Play'),
+              ),
+              FlatButton(
+                color: Colors.blue,
+                onPressed: (){
+                  final play=AudioCache();
+                  play.play('note7.wav');
+                },
+                child: Text('Play'),
+              ),
+            ],
           ),
         ),
       ),
