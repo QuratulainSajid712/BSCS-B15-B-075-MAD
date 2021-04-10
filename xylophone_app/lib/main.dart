@@ -19,50 +19,52 @@ class XylophoneApp extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children:[
-              FlatButton(
-              color: Colors.blue,
-              onPressed: (){
-                playsound(1);
-                },
-          ),
-              FlatButton(
+             Expanded(child:   FlatButton(
+               color: Colors.blue,
+               onPressed: (){
+                 playsound(1);
+               },
+             ),),
+        Expanded(
+              child: FlatButton(
                 color: Colors.yellow,
                 onPressed: (){
                  playsound(2);
                 },
-              ),
-              FlatButton(
+              ),),
+        Expanded(child: FlatButton(
                 color: Colors.red,
                 onPressed: (){
                   playsound(3);
                 },
-              ),
-              FlatButton(
+              ),),
+              Expanded(child: FlatButton(
                 color: Colors.orange,
                 onPressed: (){
                  playsound(4);
                 },
-              ),
-              FlatButton(
+              ),),
+             Expanded(child: FlatButton(
                 color: Colors.purple,
                 onPressed: (){
                   playsound(5);
                 },
 
-              ),
-              FlatButton(
+              ),),
+              Expanded(child: FlatButton(
                 color: Colors.lightGreenAccent,
                 onPressed: (){
                 playsound(6);
                 },
-              ),
-              FlatButton(
+              ),),
+              Expanded(child: FlatButton(
                 color: Colors.pinkAccent,
                 onPressed: (){
                  playsound(7);
                 },
-              ),
+              ),),
             ],
+
           ),
         ),
       ),
