@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // TODO: Step 2- Import the rFlutter_Alert package here.
 import 'quiz_brain.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 
 QuizBrain quizBrain= QuizBrain();
@@ -37,25 +38,30 @@ class _QuizPageState extends State<QuizPage> {
   List <Icon> scorekeeper=[];
  void checkAnswer(bool userPickedAnswer){
 bool correctAnswer = quizBrain.getCorrectAnswer();
-if(quizBrain.isFinished()== true){
-  quizBrain.reset();
-  scorekeeper=[];
-}
-else{
-  if(userPickedAnswer==correctAnswer){
-    scorekeeper.add(Icon(
-      Icons.check,
-      color: Colors.green,
-    ));
+setState(() {
+  if(quizBrain.isFinished()== true){
+    Alert(context: context,
+      title: 'Finished',
+      desc: 'You\'ve reached the end of the quiz.',).show();
+    quizBrain.reset();
+    scorekeeper=[];
   }
   else{
-    scorekeeper.add(Icon(
-      Icons.close,
-      color: Colors.red,
-    ));
+    if(userPickedAnswer==correctAnswer){
+      scorekeeper.add(Icon(
+        Icons.check,
+        color: Colors.green,
+      ));
+    }
+    else{
+      scorekeeper.add(Icon(
+        Icons.close,
+        color: Colors.red,
+      ));
+    }
+    quizBrain.nextQuestion();
   }
-  quizBrain.nextQuestion();
-}
+});
  }
   @override
   Widget build(BuildContext context) {
