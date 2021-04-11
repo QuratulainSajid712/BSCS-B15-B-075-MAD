@@ -35,7 +35,9 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   List <Icon> scorekeeper=[];
-
+ void checkAnswer(bool userPickedAnswer){
+   
+ }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -49,7 +51,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'Question 01',
+                quizBrain.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
