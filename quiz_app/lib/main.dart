@@ -31,12 +31,15 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+  List <Icon> scorekeeper=[];
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        //TODO Step 03 as Testing
         Expanded(
           flex: 5,
           child: Padding(
@@ -67,7 +70,12 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                //The user picked true.
+               setState(() {
+                 scorekeeper.add(Icon(
+                   Icons.check,
+                   color: Colors.green,
+                 ));
+               });
               },
             ),
           ),
@@ -85,13 +93,25 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                //The user picked false.
+                    setState(() {
+                       scorekeeper.add(Icon(
+                       Icons.close,
+                       color: Colors.red,
+                       ));
+                    });
               },
             ),
           ),
         ),
-        //TODO: Step 01 Add Score Keeper
+        Row(
+          children:scorekeeper,
+        ),
       ],
     );
   }
 }
+/*
+question1: 'You can lead a cow down stairs but not up stairs.', false,
+question2: 'Approximately one quarter of human bones are in the feet.', true,
+question3: 'A slug\'s blood is green.', true,
+*/
