@@ -35,4 +35,7 @@ class QuizBrain{
       _questionNumber++;
     }
   }
+  String getQuestionText() {
+    return _questionBank[_questionNumber].questionText;
+  }
 }
