@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // TODO: Step 2- Import the rFlutter_Alert package here.
 
-QuizBrain quizBrain= QuizBrain();
+//QuizBrain quizBrain= QuizBrain();
 void main() {
   runApp(QuizApp());
 }
@@ -25,6 +25,9 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   @override
   Widget build(BuildContext context) {
-
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+    );
   }
 }
