@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // TODO: Step 2- Import the rFlutter_Alert package here.
 
-
+QuizBrain quizBrain= QuizBrain();
 void main() {
   runApp(QuizApp());
 }
