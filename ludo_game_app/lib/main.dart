@@ -195,9 +195,9 @@ class _LudoPageState extends State<LudoPage> {
         limit = limit - 1;
       }
     };
-    if (dice1count == 10 &&
-        dice2count == 10 &&
-        dice3count == 10 &&
+    if (dice1count == 10 ||
+        dice2count == 10 ||
+        dice3count == 10 ||
         dice4count == 10) {
       showResultDialog();
     }
@@ -242,9 +242,9 @@ class _LudoPageState extends State<LudoPage> {
       if (limit > 0) {
         limit = limit - 1;
       };
-      if (dice1count == 10 &&
-          dice2count == 10 &&
-          dice3count == 10 &&
+      if (dice1count == 10 ||
+          dice2count == 10 ||
+          dice3count == 10 ||
           dice4count == 10) {
         showResultDialog();
       }
@@ -290,9 +290,9 @@ class _LudoPageState extends State<LudoPage> {
         }
       }
       ;
-      if (dice1count == 10 &&
-          dice2count == 10 &&
-          dice3count == 10 &&
+      if (dice1count == 10 ||
+          dice2count == 10 ||
+          dice3count == 10 ||
           dice4count == 10) {
         showResultDialog();
       }
@@ -338,9 +338,9 @@ class _LudoPageState extends State<LudoPage> {
         }
       }
       ;
-      if (dice1count == 10 &&
-          dice2count == 10 &&
-          dice3count == 10 &&
+      if (dice1count == 10 ||
+          dice2count == 10 ||
+          dice3count == 10 ||
           dice4count == 10) {
         showResultDialog();
       }
