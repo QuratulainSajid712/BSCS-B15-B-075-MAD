@@ -4,6 +4,23 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'dart:math';
 
+String dropdownColor = 'Select Color';
+
+String dropdownColor1 = 'Select Color';
+
+String dropdownColor2 = 'Select Color';
+
+String dropdownColor3 = 'Select Color';
+
+String dropdownColor4 = 'Select Color';
+
+String dropdownColor5 = 'Select Color';
+
+String dropdownColor6 = 'Select Color';
+
+String dropdownColor7 = 'Select Color';
+int s1, s2, s3, s4, s5, s6, s7;
+Color c1, c2, c3, c4, c5, c6, c7;
 void main() {
   runApp(XylophoneApp());
 }
