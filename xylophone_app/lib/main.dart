@@ -34,9 +34,9 @@ void playsound(int soundnumber){
   final play=AudioCache();
   play.play('note$soundnumber.wav');
 }
-Expanded CreateButon(Color color, int soundnumber){
+Expanded CreateButton(Color color, int soundnumber){
   return Expanded(
-    child:   FlatButton(
+    child: FlatButton(
       color: color,
       onPressed: (){
         playsound(soundnumber);
@@ -536,30 +536,32 @@ class _customizedxylophoneState extends State<customizedxylophone> {
   }
 }
 
-class XylophoneApp extends StatelessWidget {
-
+class XylophoneApp extends StatefulWidget {
+  @override
+  _XylophoneAppState createState() => _XylophoneAppState();
+}
+class _XylophoneAppState extends State<XylophoneApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children:[
-              CreateButon(Colors.blue, 1),
-              CreateButon(Colors.redAccent, 2),
-              CreateButon(Colors.lightGreenAccent, 3),
-              CreateButon(Colors.orangeAccent, 4),
-              CreateButon(Colors.yellow, 5),
-              CreateButon(Colors.purpleAccent, 6),
-              CreateButon(Colors.greenAccent, 7),
-            ],
-
+        home: Scaffold(
+          body: SafeArea(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  CreateButton(c1, 1),
+                  CreateButton(c2, 2),
+                  CreateButton(c3, 3),
+                  CreateButton(c4, 4),
+                  CreateButton(c5, 5),
+                  CreateButton(c6, 6),
+                  CreateButton(c7, 7),
+                ]),
           ),
         ),
-      ),
     );
   }
 }
+
 
 
