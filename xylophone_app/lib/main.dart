@@ -22,7 +22,16 @@ String dropdownColor7 = 'Select Color';
 int s1, s2, s3, s4, s5, s6, s7;
 Color c1, c2, c3, c4, c5, c6, c7;
 void main() {
-  runApp(XylophoneApp());
+  runApp(MaterialApp(
+    initialRoute: '/',
+    routes: {
+      '/': (context) => customizedxylophone(),
+      '/second': (context) => XylophoneApp(),
+    },
+  ),);
+}
+
+customizedxylophone() {
 }
 
 class XylophoneApp extends StatelessWidget {
