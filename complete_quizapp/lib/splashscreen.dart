@@ -12,7 +12,7 @@ class _splashscreenState extends State<splashscreen> {
   @override
   void initState(){
     super.initState();
-    Timer(Duration(seconds: 3), (){
+    Timer(Duration(seconds: 6), (){
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => homepage(),
       ));
@@ -25,17 +25,37 @@ class _splashscreenState extends State<splashscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.indigo,
-      body: Center(
-        child:Image.asset(),
-       /* Text(
-          "Quizstar\nTest Yourself !!",
-          style: TextStyle(
-            fontSize: 50.0,
-            color: Colors.white,
-            fontFamily: "Satisfy",
-          ),
-          textAlign: TextAlign.center,
-        ),*/
+      body: SafeArea(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+        CircleAvatar(
+        backgroundImage:AssetImage('images/quiz.png') ,
+        backgroundColor: Colors.white,
+        radius: 100.0,
+      ),
+      Text(
+        'Qurat-Ul-Ain Sajid',
+        style: TextStyle(
+          fontFamily: 'Pacifico',
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+          fontSize: 30.0,
+
+        ),
+      ),
+      Text(
+        'CIIT/FA17-BCS-075/VHR',
+        style: TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+          fontSize: 15.0,
+          letterSpacing: 4.0,
+
+        ),
+      ),
+    ],
+    ),
       ),
     );
   }
