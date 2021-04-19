@@ -27,7 +27,7 @@ class _splashscreenState extends State<splashscreen> {
       backgroundColor: Colors.indigo,
       body: Center(
         child:Image(),
-        Text(
+       /* Text(
           "Quizstar\nTest Yourself !!",
           style: TextStyle(
             fontSize: 50.0,
@@ -35,7 +35,7 @@ class _splashscreenState extends State<splashscreen> {
             fontFamily: "Satisfy",
           ),
           textAlign: TextAlign.center,
-        ),
+        ),*/
       ),
     );
   }
