@@ -12,20 +12,17 @@ class _splashscreenState extends State<splashscreen> {
   @override
   void initState(){
     super.initState();
-    Timer(Duration(seconds: 6), (){
+    Timer(Duration(seconds: 10), (){
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => homepage(),
       ));
     });
   }
-
-  // added test yourself
-  // and made the text to align at center
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.indigo,
-      body: SafeArea(
+      body: Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -38,7 +35,7 @@ class _splashscreenState extends State<splashscreen> {
         'Qurat-Ul-Ain Sajid',
         style: TextStyle(
           fontFamily: 'Pacifico',
-          color: Colors.black,
+          color: Colors.white,
           fontWeight: FontWeight.bold,
           fontSize: 30.0,
 
@@ -47,7 +44,7 @@ class _splashscreenState extends State<splashscreen> {
       Text(
         'CIIT/FA17-BCS-075/VHR',
         style: TextStyle(
-          color: Colors.black,
+          color: Colors.white,
           fontWeight: FontWeight.bold,
           fontSize: 15.0,
           letterSpacing: 4.0,
