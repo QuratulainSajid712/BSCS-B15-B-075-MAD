@@ -2,7 +2,13 @@
 
 A new Flutter application.
 
+# Quiz App Splash Screen
+
+![QuizApp SplashScreen](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/complete_quizapp/screenshots/splashscreen.PNG)
+
 ## Getting Started
+
+
 
 This project is a starting point for a Flutter application.
 
