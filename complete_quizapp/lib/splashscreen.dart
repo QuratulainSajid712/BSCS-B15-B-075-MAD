@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:complete_quizapp/homepage.dart';
+import 'dart:async';
 
 class splashscreen extends StatefulWidget {
   @override
@@ -24,7 +26,8 @@ class _splashscreenState extends State<splashscreen> {
     return Scaffold(
       backgroundColor: Colors.indigo,
       body: Center(
-        child: Text(
+        child:Image(),
+        Text(
           "Quizstar\nTest Yourself !!",
           style: TextStyle(
             fontSize: 50.0,
