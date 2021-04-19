@@ -2,7 +2,11 @@
 
 A new Flutter application.
 
+![QuizApp SplashScreen](/screenshots/splashscreen.png)
+
 ## Getting Started
+
+
 
 This project is a starting point for a Flutter application.
 
