@@ -26,7 +26,7 @@ class _splashscreenState extends State<splashscreen> {
     return Scaffold(
       backgroundColor: Colors.indigo,
       body: Center(
-        child:Image(),
+        child:Image.asset(),
        /* Text(
           "Quizstar\nTest Yourself !!",
           style: TextStyle(
