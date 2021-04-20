@@ -11,12 +11,12 @@ class _homepageState extends State<homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page"),
+        title: Text("Home Page" ,textAlign: TextAlign.center,),
       ),
       drawer: Drawer(
         child: MainDrawer(),
       ),
-
+       body: ,
     );
   }
 }

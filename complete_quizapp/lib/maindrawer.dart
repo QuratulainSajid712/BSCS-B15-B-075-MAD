@@ -15,7 +15,7 @@ class MainDrawer extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 50.0,
-                backgroundImage: AssetImage('quiz.png'),
+                backgroundImage: AssetImage('images/quiz.png'),
               ),
               SizedBox(
                 height: 5.0,
@@ -31,7 +31,7 @@ class MainDrawer extends StatelessWidget {
                 height: 5.0,
               ),
               Text(
-                "By \n FA17-BCS-075",
+                "           By \n FA17-BCS-075",
                 style: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.w400,
@@ -61,14 +61,6 @@ class MainDrawer extends StatelessWidget {
           color: Colors.black,
         ),
         title: Text("Contact Us"),
-      ),
-      ListTile(
-        onTap: () {},
-        leading: Icon(
-          Icons.settings,
-          color: Colors.black,
-        ),
-        title: Text("Settings"),
       ),
     ]);
   }
