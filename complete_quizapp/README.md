@@ -6,6 +6,10 @@ A new Flutter application.
 
 ![QuizApp SplashScreen](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/complete_quizapp/screenshots/splashscreen.PNG)
 
+# Home Page of QUiz App
+![QuizApp SplashScreen](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/complete_quizapp/screenshots/homepage.PNG)
+
+
 ## Getting Started
 
 
