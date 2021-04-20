@@ -1,3 +1,4 @@
+import 'package:complete_quizapp/homepage.dart';
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -46,7 +47,9 @@ class MainDrawer extends StatelessWidget {
       ),
 
       ListTile(
-        onTap: () {},
+        onTap: () {
+          homepage();
+        },
         leading: Icon(
           Icons.assessment,
           color: Colors.black,

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'quiz_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'maindrawer.dart';
 
 QuizBrain quizBrain= QuizBrain();
+
 
 class QuizPage extends StatefulWidget {
   @override
@@ -40,11 +42,18 @@ class _QuizPageState extends State<QuizPage> {
   }
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Home Page" ,textAlign: TextAlign.center,),
+      ),
+      drawer: Drawer(
+        child: MainDrawer(),
+      ),
+      body: Center(
+      child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        //TODO Step 03 as Testing
         Expanded(
           flex: 5,
           child: Padding(
@@ -55,7 +64,7 @@ class _QuizPageState extends State<QuizPage> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -102,6 +111,8 @@ class _QuizPageState extends State<QuizPage> {
           children:scorekeeper,
         ),
       ],
+    ),
+      ),
     );
   }
 }
