@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:complete_quizapp/quizpage1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'maindrawer.dart';
@@ -7,6 +10,13 @@ class homepage extends StatefulWidget {
   _homepageState createState() => _homepageState();
 }
 class _homepageState extends State<homepage> {
+  void initState() {
+    super.initState();
+    Timer(
+        Duration(seconds: 3),
+            () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => QuizPage())));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +59,7 @@ class _homepageState extends State<homepage> {
                 ),
               ),
               onPressed: () {
-                QuizPage();
+                initState();
               },
             ),
           ),
@@ -65,6 +75,7 @@ class _homepageState extends State<homepage> {
                 ),
               ),
               onPressed: () {
+
               },
             ),
           ),
