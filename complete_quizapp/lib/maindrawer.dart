@@ -48,7 +48,8 @@ class MainDrawer extends StatelessWidget {
 
       ListTile(
         onTap: () {
-          homepage();
+              () => Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => homepage()));
         },
         leading: Icon(
           Icons.assessment,
