@@ -16,7 +16,61 @@ class _homepageState extends State<homepage> {
       drawer: Drawer(
         child: MainDrawer(),
       ),
+      body: Center(
+        child:Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(height: 100,),
+            Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Center(
+                  child: Text(
+                    'Quiz Time',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+          SizedBox(height:120 ,),
+          Padding(
+            padding: EdgeInsets.all(30.0),
+            child: FlatButton(
+              textColor: Colors.white,
+              color: Colors.indigo,
+              child: Text(
+                'True / False',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30.0,
+                ),
+              ),
+              onPressed: () {
+              },
+            ),
+          ),
+      Padding(
+            padding: EdgeInsets.all(30.0),
+            child: FlatButton(
+              color: Colors.indigo,
+              child: Text(
+                'Multiple Choice',
+                style: TextStyle(
+                  fontSize: 30.0,
+                  color: Colors.white,
+                ),
+              ),
+              onPressed: () {
+              },
+            ),
+          ),
 
+      ],
+        ),
+    ),
     );
   }
 }
