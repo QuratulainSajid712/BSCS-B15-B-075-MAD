@@ -49,6 +49,7 @@ class _homepageState extends State<homepage> {
                 ),
               ),
               onPressed: () {
+                QuizPage();
               },
             ),
           ),
@@ -71,6 +72,7 @@ class _homepageState extends State<homepage> {
       ],
         ),
     ),
+
     );
   }
 }
