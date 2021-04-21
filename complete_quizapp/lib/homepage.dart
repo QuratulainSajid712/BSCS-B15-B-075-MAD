@@ -11,9 +11,7 @@ class homepage extends StatefulWidget {
   _homepageState createState() => _homepageState();
 }
 class _homepageState extends State<homepage> {
-  int  index;
-  QuizBrain quizBrain;
-  int _value;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,8 +71,7 @@ class _homepageState extends State<homepage> {
                 ),
               ),
               onPressed: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => QuizPage2(index,quizBrain,_value)));
+              
               },
             ),
           ),
