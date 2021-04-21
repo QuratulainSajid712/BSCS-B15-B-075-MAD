@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'quiz_brain1.dart';
 
 class QuizApp2 extends StatelessWidget {
-  int  index;//if you have multiple values add here
+  int  index;
   QuizBrain quizBrain;
   int _value;
-  // final List<int> selected_answer;
+
   QuizApp2(this.index,this.quizBrain,this._value, {Key key}): super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -35,19 +35,16 @@ List<int> wrong_answers=[];
 
 List<int> correct_answers=[];
 class _QuizPageState2 extends State<QuizPage2>  {
-  // DateTime alert;
-
-  // @override
 
   List<Widget> scoreKeeper = [];
 
 
   List<Widget> _getList(BuildContext context,int index) {
     List<String> options= widget.quizBrain.getoptions_index(widget.index);
-    // print(options.length);
+
     List<Widget> temp = [];
     int _value=widget._value;
-    // _value=widget._value;
+
 
     for (var q = 1; q<=options.length; q++) {
       temp.add(
