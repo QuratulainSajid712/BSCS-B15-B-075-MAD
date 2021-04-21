@@ -4,6 +4,7 @@ import 'package:complete_quizapp/quizpage1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'maindrawer.dart';
+import 'quizpage2.dart';
 
 class homepage extends StatefulWidget {
   @override
@@ -70,7 +71,8 @@ class _homepageState extends State<homepage> {
                 ),
               ),
               onPressed: () {
-
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => QuizPage2()));
               },
             ),
           ),
