@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'quiz_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -40,11 +42,25 @@ class _QuizPageState extends State<QuizPage> {
       }
     });
   }
+  String answer;
+  Timer timer;
+  int seconds;
+
+  @override
+  void initState() {
+    super.initState();
+    seconds = 0;
+    timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
+      setState(() {
+        seconds++;
+      });
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page" ,textAlign: TextAlign.center,),
+        title: Text("True/False" ,textAlign: TextAlign.center,),
       ),
       drawer: Drawer(
         child: MainDrawer(),
@@ -115,6 +131,7 @@ class _QuizPageState extends State<QuizPage> {
       ),
     );
   }
+
 }
 /*
 question1: 'You can lead a cow down stairs but not up stairs.', false,
