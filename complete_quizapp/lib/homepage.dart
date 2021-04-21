@@ -1,17 +1,19 @@
 import 'dart:async';
-
+import 'package:complete_quizapp/quiz_brain1.dart';
 import 'package:complete_quizapp/quizpage1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'maindrawer.dart';
-import 'quizpage2.dart';
+import 'retry.dart';
 
 class homepage extends StatefulWidget {
   @override
   _homepageState createState() => _homepageState();
 }
 class _homepageState extends State<homepage> {
-
+  int  index;
+  QuizBrain quizBrain;
+  int _value;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +74,7 @@ class _homepageState extends State<homepage> {
               ),
               onPressed: () {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => QuizPage2()));
+                    context, MaterialPageRoute(builder: (context) => QuizPage2(index,quizBrain,_value)));
               },
             ),
           ),
@@ -83,5 +85,6 @@ class _homepageState extends State<homepage> {
 
     );
   }
+
 }
 

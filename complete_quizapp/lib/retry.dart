@@ -1,24 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'quiz_brain1.dart';
+import 'homepage.dart';
 
-class QuizApp2 extends StatelessWidget {
-  int  index;
-  QuizBrain quizBrain;
-  int _value;
 
-  QuizApp2(this.index,this.quizBrain,this._value, {Key key}): super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey.shade900,
-      appBar: AppBar(title: Text("Undo Quiz"),),
-      body: SafeArea(
-          child: QuizPage2(index,quizBrain,_value)
-      ),
-    );
-  }
-}
 
 class QuizPage2 extends StatefulWidget {
   int  index;
