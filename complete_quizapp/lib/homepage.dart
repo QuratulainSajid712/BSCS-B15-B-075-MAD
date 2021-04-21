@@ -10,13 +10,7 @@ class homepage extends StatefulWidget {
   _homepageState createState() => _homepageState();
 }
 class _homepageState extends State<homepage> {
-  void initState() {
-    super.initState();
-    Timer(
-        Duration(seconds: 3),
-            () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => QuizPage())));
-  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +53,8 @@ class _homepageState extends State<homepage> {
                 ),
               ),
               onPressed: () {
-              QuizPage();
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => QuizPage()));
               },
             ),
           ),
