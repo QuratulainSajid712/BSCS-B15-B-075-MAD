@@ -36,7 +36,14 @@ class _contactusState extends State<contactus> {
 
               ),
             ),
-            
+      SizedBox(
+        width: 600.0,
+        height: 20.0,
+        child: Divider(
+            color:  Colors.white,
+            thickness: 2.0
+        ),
+      ),
             ListTile(
               onTap: () {
               },
