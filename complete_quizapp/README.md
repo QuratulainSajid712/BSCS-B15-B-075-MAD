@@ -15,6 +15,9 @@ A new Flutter application.
 # Contact Us Page of QUiz App
 ![QuizApp SplashScreen](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/complete_quizapp/screenshots/contactus.PNG)
 
+# Quiz Page 1 (True/False) of QUiz App
+![QuizApp SplashScreen](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/complete_quizapp/screenshots/truefalse.PNG)
+
 
 ## Getting Started
 
