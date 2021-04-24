@@ -25,19 +25,22 @@ class _QuizPageState extends State<QuizPage> {
     setState(() {
       if(quizBrain.isFinished()== true){
         Alert(context: context,
-          title: 'Finished',
-          desc: 'You\'ve reached the end of the quiz.',).show();
+        title: 'Finished',
+        desc:
+            'You\'ve reached the end of the quiz.\n True Answer: $count_correct\nWrong Answer: $count_wrong', ).show();
         quizBrain.reset();
         scorekeeper=[];
       }
       else{
         if(userPickedAnswer==correctAnswer){
+          count_correct += 1;
           scorekeeper.add(Icon(
             Icons.check,
             color: Colors.green,
           ));
         }
         else{
+          count_wrong += 1;
           scorekeeper.add(Icon(
             Icons.close,
             color: Colors.red,

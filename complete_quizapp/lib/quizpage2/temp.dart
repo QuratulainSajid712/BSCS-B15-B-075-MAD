@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:complete_quizapp/quizpage2//quiz_brain1.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:complete_quizapp/maindrawer.dart';
 
 
 
@@ -15,6 +16,12 @@ class QuizApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text("Multiple Choice" ,textAlign: TextAlign.center,),
+      ),
+      drawer: Drawer(
+        child: MainDrawer(),
+      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.0),
@@ -58,7 +65,7 @@ class _QuizPageState extends State<QuizPage2> {
       if (quizBrain.isFinished() == true) {
         Alert(
           context: context,
-          title: 'Finshed',
+          title: 'Finished',
           desc:
           'You\'ve reached the end of the quiz.\n True Answer: $count_correct\nWrong Answer: $count_wrong',
         ).show();
@@ -99,7 +106,7 @@ class _QuizPageState extends State<QuizPage2> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),

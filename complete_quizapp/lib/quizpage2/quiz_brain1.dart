@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:complete_quizapp/quizpage2/question1.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'quizpage.dart';
 
 
 class QuizBrain1 {

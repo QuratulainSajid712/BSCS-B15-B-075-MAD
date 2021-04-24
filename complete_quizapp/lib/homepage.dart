@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:complete_quizapp/quizpage1.dart';
+import 'package:complete_quizapp/quizpage2/quiz_brain1.dart';
+import 'package:complete_quizapp/quizpage2/retry.dart';
 import 'package:complete_quizapp/quizpage2/temp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,7 +14,6 @@ class homepage extends StatefulWidget {
   _homepageState createState() => _homepageState();
 }
 class _homepageState extends State<homepage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,7 +74,7 @@ class _homepageState extends State<homepage> {
               ),
               onPressed: () {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => QuizApp()));
+                    context, MaterialPageRoute(builder: (context) =>    QuizApp()));
               },
             ),
           ),
