@@ -18,13 +18,8 @@ class _QuizPageState extends State<QuizPage> {
   QuizBrain quizBrain = QuizBrain();
   String timer = '';
   List<Widget> scoreKeeper = [];
-  int correct = 0;
-  int wrong = 0;
-  List<int> wrong_answers = [];
-  List<int> wrong_answers2 = [];
-  List<int> wrong_selected_answers = [];
-  List<int> correct_answers = [];
-  List<int> selected_answers = [];
+  int count_correct = 0;
+  int count_wrong = 0;
   void checkAnswer(bool userPickedAnswer){
     bool correctAnswer = quizBrain.getCorrectAnswer();
     setState(() {
@@ -67,8 +62,8 @@ class _QuizPageState extends State<QuizPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             TweenAnimationBuilder<Duration>(
-                duration: Duration(minutes: 1),
-                tween: Tween(begin: Duration(minutes: 1), end: Duration.zero),
+                duration: Duration(seconds: 30),
+                tween: Tween(begin: Duration(seconds: 30), end: Duration.zero),
                 onEnd: () {
                    print('Timer ended');
                   quizBrain.reset();
@@ -80,7 +75,8 @@ class _QuizPageState extends State<QuizPage> {
                 },
                 builder: (BuildContext context, Duration value, Widget child) {
                   var minutes = value.inMinutes;
-                  var seconds = value.inSeconds % 60;
+                  var seconds = value.inSeconds % 30;
+
                   return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 5),
                       child: Row(

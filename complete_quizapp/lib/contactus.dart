@@ -11,10 +11,13 @@ class _contactusState extends State<contactus> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     /* backgroundColor: Colors.indigo,
+      backgroundColor: Colors.indigoAccent,
         appBar: AppBar(
         title: Text("Contact Us" ,textAlign: TextAlign.center,),
-    ),*/
+    ),
+      drawer: Drawer(
+        child: MainDrawer(),),
+
         bottomNavigationBar: ContactUsBottomAppBar(
           companyName: 'Qurat-Ul-Ain Sajid',
           textColor: Colors.white,
@@ -22,7 +25,6 @@ class _contactusState extends State<contactus> {
           email: 'quratulainsajid12@gmail.com',
           // textFont: 'Sail',
         ),
-        backgroundColor: Colors.teal,
         body: ContactUs(
             cardColor: Colors.white,
             textColor: Colors.teal.shade900,
@@ -39,10 +41,6 @@ class _contactusState extends State<contactus> {
             instagram: 'quratulainSajid',
             facebookHandle: 'Qurat Ul Ain Sajid'),
 
-
-    drawer: Drawer(
-    child: MainDrawer(),
-    ),
     );
      /* body: Center(
         child: Column(
