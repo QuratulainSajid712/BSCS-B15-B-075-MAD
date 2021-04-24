@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:complete_quizapp/homepage.dart';
 import 'dart:async';
 
+
 class splashscreen extends StatefulWidget {
   @override
   _splashscreenState createState() => _splashscreenState();
@@ -24,6 +25,7 @@ class _splashscreenState extends State<splashscreen> {
       backgroundColor: Colors.indigo,
       body: Center(
         child: Column(
+
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
         CircleAvatar(
@@ -56,4 +58,6 @@ class _splashscreenState extends State<splashscreen> {
       ),
     );
   }
+
+
 }

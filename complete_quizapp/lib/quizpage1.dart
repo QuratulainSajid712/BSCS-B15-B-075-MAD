@@ -15,6 +15,16 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   List <Icon> scorekeeper=[];
+  QuizBrain quizBrain = QuizBrain();
+  String timer = '';
+  List<Widget> scoreKeeper = [];
+  int correct = 0;
+  int wrong = 0;
+  List<int> wrong_answers = [];
+  List<int> wrong_answers2 = [];
+  List<int> wrong_selected_answers = [];
+  List<int> correct_answers = [];
+  List<int> selected_answers = [];
   void checkAnswer(bool userPickedAnswer){
     bool correctAnswer = quizBrain.getCorrectAnswer();
     setState(() {
@@ -42,20 +52,6 @@ class _QuizPageState extends State<QuizPage> {
       }
     });
   }
-  String answer;
-  Timer timer;
-  int seconds;
-
-  @override
-  void initState() {
-    super.initState();
-    seconds = 0;
-    timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
-      setState(() {
-        seconds++;
-      });
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,73 +62,127 @@ class _QuizPageState extends State<QuizPage> {
         child: MainDrawer(),
       ),
       body: Center(
-      child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Expanded(
-          flex: 5,
-          child: Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Center(
-              child: Text(
-                quizBrain.getQuestionText(),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25.0,
-                  color: Colors.black,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TweenAnimationBuilder<Duration>(
+                duration: Duration(minutes: 1),
+                tween: Tween(begin: Duration(minutes: 1), end: Duration.zero),
+                onEnd: () {
+                   print('Timer ended');
+                  quizBrain.reset();
+                  quizBrain.shuffle();
+                  scoreKeeper = [];
+
+                  timer = 'time';
+
+                },
+                builder: (BuildContext context, Duration value, Widget child) {
+                  var minutes = value.inMinutes;
+                  var seconds = value.inSeconds % 60;
+                  return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.alarm,
+                            color: Colors.red,
+                            size: 50,
+                          ),
+                          Text('$minutes:$seconds',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 50))
+                        ],
+                      ));
+                }),
+            Container(
+              height: 50,
+              width: 150,
+              child: FlatButton(
+                color: Colors.red,
+                textColor: Colors.white,
+                child: new Text(
+                  "Stop Quiz",
+                  style: TextStyle(fontSize: 25),
+                ),
+                onPressed: () {
+                  // quizBrain.reset();
+                  // quizBrain.shuffle();
+                  // scoreKeeper = [];
+                  // showAlert(context);
+                  timer = 'stop';
+                },
+              ),
+            ),
+
+            Expanded(
+              flex: 5,
+              child: Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Center(
+                  child: Text(
+                    quizBrain.getQuestionText(),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
-        ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              textColor: Colors.white,
-              color: Colors.green,
-              child: Text(
-                'True',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.all(15.0),
+                child: FlatButton(
+                  textColor: Colors.white,
+                  color: Colors.green,
+                  child: Text(
+                    'True',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  onPressed: () {
+                    checkAnswer(true);
+                  },
                 ),
               ),
-              onPressed: () {
-                checkAnswer(true);
-              },
             ),
-          ),
-        ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              color: Colors.red,
-              child: Text(
-                'False',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.white,
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.all(15.0),
+                child: FlatButton(
+                  color: Colors.red,
+                  child: Text(
+                    'False',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                  onPressed: () {
+                    checkAnswer(false);
+                  },
                 ),
               ),
-              onPressed: () {
-                checkAnswer(false);
-              },
             ),
-          ),
+            Row(
+              children:scorekeeper,
+            ),
+          ],
         ),
-        Row(
-          children:scorekeeper,
-        ),
-      ],
-    ),
       ),
     );
   }
-
 }
+
 /*
 question1: 'You can lead a cow down stairs but not up stairs.', false,
 question2: 'Approximately one quarter of human bones are in the feet.', true,

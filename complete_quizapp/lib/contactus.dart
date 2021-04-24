@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'maindrawer.dart';
+import 'package:contactus/contactus.dart';
 
 class contactus extends StatefulWidget {
   @override
@@ -10,14 +11,40 @@ class _contactusState extends State<contactus> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo,
+     /* backgroundColor: Colors.indigo,
         appBar: AppBar(
         title: Text("Contact Us" ,textAlign: TextAlign.center,),
-    ),
+    ),*/
+        bottomNavigationBar: ContactUsBottomAppBar(
+          companyName: 'Abhishek Doshi',
+          textColor: Colors.white,
+          backgroundColor: Colors.indigo.shade300,
+          email: 'adoshi26.ad@gmail.com',
+          // textFont: 'Sail',
+        ),
+        backgroundColor: Colors.teal,
+        body: ContactUs(
+            cardColor: Colors.white,
+            textColor: Colors.teal.shade900,
+            logo: AssetImage('images/quiz.png'),
+            email: 'adoshi26.ad@gmail.com',
+            companyName: 'Abhishek Doshi',
+            companyColor: Colors.teal.shade100,
+            phoneNumber: '+917818044311',
+            githubUserName: 'AbhishekDoshi26',
+            linkedinURL:
+            '',
+            tagLine: 'Flutter Developer',
+            taglineColor: Colors.teal.shade100,
+            instagram: 'quratulainSajid',
+            facebookHandle: 'Qurat Ul Ain Sajid'),
+
+
     drawer: Drawer(
     child: MainDrawer(),
     ),
-      body: Center(
+    );
+     /* body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -78,6 +105,6 @@ class _contactusState extends State<contactus> {
           ],
         ),
       ),
-    );
+    );*/
   }
 }

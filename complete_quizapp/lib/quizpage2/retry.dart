@@ -1,15 +1,35 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'quiz_brain1.dart';
-import 'homepage.dart';
+import 'package:complete_quizapp/quizpage2//quiz_brain1.dart';
 
-
+class QuizApp2 extends StatelessWidget {
+  int  index;//if you have multiple values add here
+  QuizBrain1 quizBrain;
+  int _value;
+  // final List<int> selected_answer;
+  QuizApp2(this.index,this.quizBrain,this._value, {Key key}): super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey.shade900,
+      appBar: AppBar(title: Text("Undo Quiz"),),
+      body: SafeArea(
+          child: QuizPage2(index,quizBrain,_value)
+        // Padding(
+        //   // padding: EdgeInsets.symmetric(horizontal: 10.0),
+        //   child: QuizPage(),
+        // ),
+      ),
+    );
+    // );
+  }
+}
 
 class QuizPage2 extends StatefulWidget {
-  int  index;
-  QuizBrain quizBrain;
+  int  index;//if you have multiple values add here
+  QuizBrain1 quizBrain;
   int _value;
-
+  // final List<int> selected_answer;
   QuizPage2(this.index,this.quizBrain,this._value, {Key key}): super(key: key);
   @override
   _QuizPageState2 createState() => _QuizPageState2();
@@ -20,16 +40,19 @@ List<int> wrong_answers=[];
 
 List<int> correct_answers=[];
 class _QuizPageState2 extends State<QuizPage2>  {
+  // DateTime alert;
+
+  // @override
 
   List<Widget> scoreKeeper = [];
 
 
   List<Widget> _getList(BuildContext context,int index) {
     List<String> options= widget.quizBrain.getoptions_index(widget.index);
-
+    // print(options.length);
     List<Widget> temp = [];
     int _value=widget._value;
-
+    // _value=widget._value;
 
     for (var q = 1; q<=options.length; q++) {
       temp.add(
@@ -52,6 +75,23 @@ class _QuizPageState2 extends State<QuizPage2>  {
               )
 
           )
+        // new Container(
+        //     padding: EdgeInsets.symmetric(horizontal: 25),
+        //     decoration: BoxDecoration(
+        //       // shape:  BoxShape.circle,
+        //       borderRadius: BorderRadius.circular(80.0),
+        //     ),
+        //     width: double.infinity,
+        //     height: 80,
+        //     child:FlatButton(
+        //       color: Color(0xFF00E676),
+        //       textColor: Colors.white,
+        //       child: new Text(options[q-1],style: TextStyle(fontSize: 25),),
+        //       onPressed: () {
+        //         checkAnswer(q,context);
+        //       },
+        //     )
+        // )
 
       );
     }
@@ -103,7 +143,45 @@ class _QuizPageState2 extends State<QuizPage2>  {
                               fontSize: 50))
                     ],));
             }),
+        // Container(
+        //   height: 50,
+        //   width: 150,
+        //   child: FlatButton(
+        //     color: Colors.red,
+        //
+        //     textColor: Colors.white,
+        //     child: new Text("Stop Quiz",style: TextStyle(fontSize: 25),),
+        //     onPressed: () {
+        //       widget.quizBrain.reset();
+        //       // widget.quizBrain.shuffle();
+        //       scoreKeeper = [];
+        //       // showAlert(context);
+        //       // Navigator.push(
+        //       //     context,
+        //       //     MaterialPageRoute(builder: (context) => SecondRoute()));
+        //     },
+        //   ),),
 
+        // RaisedButton(
+        //   onPressed: () {},
+        //   textColor: Colors.white,
+        //   padding: const EdgeInsets.all(0.0),
+        //   child: Container(
+        //
+        //     decoration: const BoxDecoration(
+        //       gradient: LinearGradient(
+        //         colors: <Color>[
+        //           Color(0xFF0D47A1),
+        //           Color(0xFF1976D2),
+        //           Color(0xFF42A5F5),
+        //         ],
+        //       ),
+        //     ),
+        //     padding: const EdgeInsets.all(10.0),
+        //     child:
+        //     const Text('Stop Quiz', style: TextStyle(fontSize: 20)),
+        //   ),
+        // ),
         Expanded(
           flex: 1,
           child: Padding(

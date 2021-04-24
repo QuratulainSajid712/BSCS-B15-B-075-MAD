@@ -1,10 +1,11 @@
 import 'dart:async';
-import 'package:complete_quizapp/quiz_brain1.dart';
 import 'package:complete_quizapp/quizpage1.dart';
+import 'package:complete_quizapp/quizpage2/temp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'maindrawer.dart';
-import 'retry.dart';
+
+
 
 class homepage extends StatefulWidget {
   @override
@@ -71,6 +72,8 @@ class _homepageState extends State<homepage> {
                 ),
               ),
               onPressed: () {
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => QuizApp()));
               },
             ),
           ),

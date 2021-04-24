@@ -1,4 +1,5 @@
 import 'package:complete_quizapp/question.dart';
+import 'package:flutter/material.dart';
 
 
 class QuizBrain{
@@ -30,7 +31,7 @@ class QuizBrain{
     Question(
         'In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.',
         true),
-  ];
+  ]..shuffle();
   void nextQuestion() {
     if (_questionNumber < _questionBank.length - 1) {
       _questionNumber++;
@@ -51,7 +52,10 @@ class QuizBrain{
     }
   }
 
+
   void reset(){
     _questionNumber=0;
   }
+
+  void shuffle() {}
 }
