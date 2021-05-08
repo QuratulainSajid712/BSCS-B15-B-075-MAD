@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'AppColors.dart';
-
+import 'maindrawer.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -19,6 +19,10 @@ class _HomepageState extends State<Homepage> {
         iconTheme: IconThemeData(color: AppColors.kPrimaryColor),
         centerTitle: true,),
 
+      drawer: Drawer(
+        child: MainDrawer(),
+      ),
+
     body: SafeArea(
     child: Container(
     padding: EdgeInsets.symmetric(horizontal: 30),
@@ -30,7 +34,7 @@ class _HomepageState extends State<Homepage> {
     GestureDetector(
     onTap: (){
    // Navigator.push(context, MaterialPageRoute(
-    //builder: (context) => TFQuizPage()));
+    //builder: (context) => );
     },
     child: Container(
     width: MediaQuery.of(context).size.width,
@@ -49,7 +53,7 @@ class _HomepageState extends State<Homepage> {
     GestureDetector(
     onTap: (){
     //Navigator.push(context, MaterialPageRoute(
-    //builder: (context) => MCQuizPage())
+    //builder: (context) => )
       // );
     },
     child: Container(
