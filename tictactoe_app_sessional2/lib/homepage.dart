@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'AppColors.dart';
 import 'maindrawer.dart';
+import 'Simplemode/simplepage.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -43,8 +44,8 @@ class _HomepageState extends State<Homepage> {
     children: <Widget>[
     GestureDetector(
     onTap: (){
-   // Navigator.push(context, MaterialPageRoute(
-    //builder: (context) => );
+    Navigator.push(context, MaterialPageRoute(
+    builder: (context) => simplepage()) );
     },
     child: Container(
     width: MediaQuery.of(context).size.width,
