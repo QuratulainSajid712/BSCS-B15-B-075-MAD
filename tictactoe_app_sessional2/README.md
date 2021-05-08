@@ -14,6 +14,19 @@ A new Flutter application.
 
 ![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/part3.PNG)
 
+# Tic Tac Toe App (Go to home page from any page Part-6)
+
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/part6.PNG)
+
+# Tic Tac Toe App (Navigation Drawer Part-8)
+
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/part8.PNG)
+
+# Tic Tac Toe App (Contact us page Part-9)
+
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/part9.PNG)
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
