@@ -10,9 +10,10 @@ class splashscreen extends StatelessWidget {
         child:AnimatedSplashScreen(
           splash: Image.asset(
               'images/tic4.png',
-              width: 250,
-              height: 400,
-              fit:BoxFit.fill  ),
+              width: 350,
+              height: 450,
+              scale: 0.8,
+              fit:BoxFit.fitHeight  ),
           nextScreen: Homepage(),
           splashTransition: SplashTransition.slideTransition,
           backgroundColor: Colors.lightBlueAccent,
