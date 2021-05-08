@@ -17,12 +17,22 @@ class _HomepageState extends State<Homepage> {
             style: TextStyle(color: AppColors.kPrimaryColor)),
         backgroundColor: AppColors.kWhiteColor,
         iconTheme: IconThemeData(color: AppColors.kPrimaryColor),
-        centerTitle: true,),
-
+        centerTitle: true,
+        actions: [
+          IconButton(
+              icon: Icon(
+                Icons.home,
+                color: AppColors.kPrimaryColor,
+              ),
+              onPressed: () async {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => Homepage(),
+                ));
+              }),
+        ],),
       drawer: Drawer(
         child: MainDrawer(),
       ),
-
     body: SafeArea(
     child: Container(
     padding: EdgeInsets.symmetric(horizontal: 30),
