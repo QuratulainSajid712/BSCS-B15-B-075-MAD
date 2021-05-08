@@ -8,7 +8,11 @@ class splashscreen extends StatelessWidget {
     return Scaffold(
       body:Center(
         child:AnimatedSplashScreen(
-          splash: Image.asset('images/tic4.png',cacheWidth: 500, cacheHeight: 400,),
+          splash: Image.asset(
+              'images/tic4.png',
+              width: 250,
+              height: 400,
+              fit:BoxFit.fill  ),
           nextScreen: Homepage(),
           splashTransition: SplashTransition.slideTransition,
           backgroundColor: Colors.lightBlueAccent,
