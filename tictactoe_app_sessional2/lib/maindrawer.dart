@@ -1,7 +1,7 @@
 import 'AppColors.dart';
 import 'homepage.dart';
 import 'package:flutter/material.dart';
-
+import 'contactus.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({Key key}) : super(key: key);
@@ -86,8 +86,8 @@ class MainDrawer extends StatelessWidget {
 
       ListTile(
         onTap: () {
-        //  Navigator.pushReplacement(
-         //     context, MaterialPageRoute(builder: (context) => contactus()));
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => contactus()));
         },
         leading: Icon(
           Icons.account_circle,
