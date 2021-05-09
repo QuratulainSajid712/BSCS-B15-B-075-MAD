@@ -1,5 +1,6 @@
 
 import 'AppColors.dart';
+import 'HardMode/hardmode.dart';
 import 'homepage.dart';
 import 'package:flutter/material.dart';
 import 'contactus.dart';
@@ -76,8 +77,8 @@ class MainDrawer extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              //  Navigator.pushReplacement(
-              //     context, MaterialPageRoute(builder: (context) => contactus()));
+               Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => hardmode()));
             },
             leading: Icon(
               Icons.ac_unit_rounded,

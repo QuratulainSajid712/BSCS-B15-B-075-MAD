@@ -14,7 +14,7 @@ class splashscreen extends StatelessWidget {
               height: 450,
               scale: 0.8,
               fit:BoxFit.fitHeight  ),
-          nextScreen: Homepage(),
+          nextScreen: MainPage(),
           splashTransition: SplashTransition.slideTransition,
           backgroundColor: Colors.lightBlueAccent,
           duration: 6000,

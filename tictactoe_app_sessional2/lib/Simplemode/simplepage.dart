@@ -206,18 +206,18 @@ class _simplepageState extends State<simplepage> {
           children: <Widget>[
             Expanded(
               child: GridView.builder(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(8.0),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
+                    crossAxisCount: 4,
                     childAspectRatio: 1.0,
                     crossAxisSpacing: 9.0,
                     mainAxisSpacing: 9.0),
                 itemCount: buttonsList.length,
                 itemBuilder: (context, i) => SizedBox(
-                  width: 100.0,
-                  height: 100.0,
+                  width: 70.0,
+                  height: 70.0,
                   child: RaisedButton(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(4.0),
                     onPressed: buttonsList[i].enabled
                         ? () => playGame(buttonsList[i])
                         : null,
