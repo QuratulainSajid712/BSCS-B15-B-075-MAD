@@ -180,7 +180,7 @@ class _simplepageState extends State<simplepage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        title: Text("TIC TAC TOE",
+        title: Text(" SIMPLE MODE LEVEL",
         style: TextStyle(color: AppColors.kPrimaryColor)),
     backgroundColor: AppColors.kWhiteColor,
     iconTheme: IconThemeData(color: AppColors.kPrimaryColor),

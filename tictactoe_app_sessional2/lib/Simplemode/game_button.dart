@@ -8,5 +8,4 @@ class GameButton {
   bool enabled;
 
   GameButton(
-      {this.id, this.text = "", this.bg = AppColors.kPrimaryColor, this.enabled = true});
-}
+      {this.id, this.text = "", this.bg = AppColors.kPrimaryColor, this.enabled = true});}
