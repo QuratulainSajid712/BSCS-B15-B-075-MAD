@@ -16,7 +16,7 @@ A new Flutter application.
 
 # Tic Tac Toe App (Simple Mode Level Part-4)
 
-![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/part4.PNG)
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/simplemodepart4.PNG)
 
 # Tic Tac Toe App (Go to home page from any page Part-6)
 
@@ -24,7 +24,7 @@ A new Flutter application.
 
 # Tic Tac Toe App (Exit Button Part-7)
 
-![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/part7.PNG)
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/exitpart7.PNG)
 
 # Tic Tac Toe App (Navigation Drawer Part-8)
 
