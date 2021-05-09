@@ -18,6 +18,18 @@ A new Flutter application.
 
 ![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/simplemodepart4.PNG)
 
+# Tic Tac Toe App (HARD Mode Level Part-5)
+
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/hardmodepart5.PNG)
+
+# Tic Tac Toe App (Theme Button Part-5)
+
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/theme%20button.PNG)
+
+# Tic Tac Toe App (HARD Mode Level Theme Color changed Page  Part-5)
+
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/chnge%20theme.PNG)
+
 # Tic Tac Toe App (Go to home page from any page Part-6)
 
 ![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/part6.PNG)
