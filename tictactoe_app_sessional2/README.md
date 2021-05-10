@@ -13,14 +13,22 @@ A new Flutter application.
 # Tic Tac Toe App (Two Levels Part-3)
 
 ![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/part3.PNG)
+# Tic Tac Toe App (Complete Homepage)
+
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/homepage.PNG)
 
 # Tic Tac Toe App (Simple Mode Level Part-4)
 
-![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/simplemodepart4.PNG)
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/simplelevel.PNG)
+
+# Tic Tac Toe App (Simple Mode Level result Part-4)
+
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/result1.PNG)
+
 
 # Tic Tac Toe App (HARD Mode Level Part-5)
 
-![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/hardmodepart5.PNG)
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/hardlevel.PNG)
 
 # Tic Tac Toe App (Theme Button Part-5)
 
@@ -28,7 +36,7 @@ A new Flutter application.
 
 # Tic Tac Toe App (HARD Mode Level Theme Color changed Page  Part-5)
 
-![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/chnge%20theme.PNG)
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/darmode.PNG)
 
 # Tic Tac Toe App (Result Dialog Part-5)
 
