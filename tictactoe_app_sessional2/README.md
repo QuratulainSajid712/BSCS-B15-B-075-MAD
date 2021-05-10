@@ -4,7 +4,7 @@ A new Flutter application.
 
 # Tic Tac Toe App (Splash Screen Part-1)
 
-![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/part1.PNG)
+![tictactoe appicon](https://github.com/QuratulainSajid712/BSCS-B15-B-075-MAD/blob/main/tictactoe_app_sessional2/Screenshots/splashscreen.PNG)
 
 # Tic Tac Toe App (App Icon Part-2)
 
