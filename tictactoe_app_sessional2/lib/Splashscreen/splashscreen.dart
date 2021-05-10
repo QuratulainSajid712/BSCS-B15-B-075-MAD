@@ -23,3 +23,4 @@ class splashscreen extends StatelessWidget {
     );
   }
 }
+

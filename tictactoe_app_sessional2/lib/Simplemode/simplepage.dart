@@ -9,6 +9,7 @@ import 'package:tictactoe_app_sessional2/theme/themes.dart';
 
 import '../AppColors.dart';
 import '../homepage.dart';
+import '../maindrawer.dart';
 import 'custom_dialog.dart';
 import 'game_button.dart';
 
@@ -231,9 +232,26 @@ class _simplepageState extends State<simplepage> {
     if (snapshot.hasData) {
     Map<String, dynamic> colors = snapshot.data;
     return Scaffold(
-    appBar: AppBar(
-    title: Text("Tic Tac Toe"),
-    ),
+      appBar: AppBar(
+        title: Text(" Simple MODE LEVEL",
+            style: TextStyle(color: AppColors.kPrimaryColor)),
+        iconTheme: IconThemeData(color: AppColors.kPrimaryColor),
+        centerTitle: true,
+        actions: [
+          IconButton(
+              icon: Icon(
+                Icons.home,
+                color: AppColors.kPrimaryColor,
+              ),
+              onPressed: () async {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => Homepage(),
+                ));
+              }),
+        ],),
+      drawer: Drawer(
+        child: MainDrawer(),
+      ),
     body: Column(
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -256,8 +274,8 @@ class _simplepageState extends State<simplepage> {
     mainAxisSpacing: 9.0),
     itemCount: buttonsList.length,
     itemBuilder: (context, i) => SizedBox(
-    width: 100.0,
-    height: 100.0,
+    width: 80.0,
+    height: 80.0,
     child: RaisedButton(
     padding: const EdgeInsets.all(8.0),
     onPressed: buttonsList[i].enabled
