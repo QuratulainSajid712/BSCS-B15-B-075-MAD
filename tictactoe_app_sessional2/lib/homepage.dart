@@ -82,7 +82,7 @@ class _HomepageState extends State<Homepage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(
-                          builder: (context) => simplepage()));
+                          builder: (context) => SimpleLevel()));
                     },
                     child: Container(
                       width: MediaQuery

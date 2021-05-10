@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:tictactoe_app_sessional2/Simplemode/custom_dialog.dart';
-import 'package:tictactoe_app_sessional2/Simplemode/game_button.dart';
+import 'package:tictactoe_app_sessional2/HardMode/custom_dialog1.dart';
+import 'package:tictactoe_app_sessional2/HardMode/game_button1.dart';
 import 'package:tictactoe_app_sessional2/homepage.dart';
 import 'package:tictactoe_app_sessional2/maindrawer.dart';
 import 'package:tictactoe_app_sessional2/theme/multitheme.dart';
@@ -9,6 +9,7 @@ import 'package:tictactoe_app_sessional2/theme/theme_color_provider.dart';
 import 'package:tictactoe_app_sessional2/theme/theme_colors.dart';
 import 'package:tictactoe_app_sessional2/theme/themes.dart';
 import '../AppColors.dart';
+import 'package:giffy_dialog/giffy_dialog.dart';
 
 class HardLevel extends StatelessWidget {
   @override
@@ -200,14 +201,34 @@ class _hardmodeState extends State<hardmode> {
     if (winner != -1) {
       if (winner == 1) {
         showDialog(
-            context: context,
-            builder: (_) => CustomDialog("Player 1 Won",
-                "Press the reset button to start again.", resetGame));
+            context: context, builder: (_) => AssetGiffyDialog(
+          image: Image.asset('assets/winner.gif'),
+          title: Text('Player 1 Won',
+            style: TextStyle(
+                fontSize: 22.0, fontWeight: FontWeight.w600),
+          ),
+          description: Text('Congratulations to Player 1',
+            textAlign: TextAlign.center,
+            style: TextStyle(),
+          ),
+          entryAnimation: EntryAnimation.DEFAULT,
+          onOkButtonPressed: () {resetGame();},
+        ));
       } else {
         showDialog(
-            context: context,
-            builder: (_) => CustomDialog("Player 2 Won",
-                "Press the reset button to start again.", resetGame));
+            context: context, builder: (_) => AssetGiffyDialog(
+            image: Image.asset('assets/winner.gif'),
+            title: Text('Player 2 Won',
+            style: TextStyle(
+                fontSize: 22.0, fontWeight: FontWeight.w600),
+          ),
+          description: Text('Congratulations to Player 2',
+            textAlign: TextAlign.center,
+            style: TextStyle(),
+          ),
+          entryAnimation: EntryAnimation.DEFAULT,
+          onOkButtonPressed: () {resetGame();},
+        ));
       }
     }
 
@@ -290,6 +311,17 @@ class _hardmodeState extends State<hardmode> {
     ),
     ),
     ),
+      SizedBox(height: 10,),
+      RaisedButton(
+        child: Text(
+          "Reset",
+          style: TextStyle(color: Colors.white, fontSize: 20.0),
+        ),
+        color: Colors.red,
+        padding: const EdgeInsets.all(20.0),
+        onPressed: resetGame,
+      ),
+      SizedBox(height: 5,),
     RaisedButton(
     child: Text(
     "Exit",
@@ -305,7 +337,7 @@ class _hardmodeState extends State<hardmode> {
 
     ],
     )),
-      floatingActionButton: FloatingActionButton(
+    floatingActionButton: FloatingActionButton(
         onPressed: () {
       if (isDark) {
         ThemeColorProvider().changeTheme(Themes.light);

@@ -1,19 +1,45 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:giffy_dialog/giffy_dialog.dart';
+import 'package:tictactoe_app_sessional2/theme/multitheme.dart';
+import 'package:tictactoe_app_sessional2/theme/theme_color_provider.dart';
+import 'package:tictactoe_app_sessional2/theme/theme_colors.dart';
+import 'package:tictactoe_app_sessional2/theme/themes.dart';
 
 import '../AppColors.dart';
 import '../homepage.dart';
-import '../maindrawer.dart';
 import 'custom_dialog.dart';
 import 'game_button.dart';
 
+class SimpleLevel extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    Map<String, ThemeColors> map = new Map();
+    map[Themes.dark] = Themes.darkThemeColors();
+    map[Themes.light] = Themes.lightThemeColors();
+
+    return MultiTheme(
+      themes: map,
+      themedWidgetBuilder: (context, theme) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: theme,
+          home: simplepage(),
+        );
+      },
+    );
+  }
+}
 class simplepage extends StatefulWidget {
+  simplepage({Key key, this.title}) : super(key: key);
+  final String title;
   @override
   _simplepageState createState() => _simplepageState();
 }
 
 class _simplepageState extends State<simplepage> {
+  bool isDark = true;
   List<GameButton> buttonsList;
   var player1;
   var player2;
@@ -48,13 +74,13 @@ class _simplepageState extends State<simplepage> {
   void playGame(GameButton gb) {
     setState(() {
       if (activePlayer == 1) {
-        gb.text = "O";
-        gb.bg = AppColors.kBlueColor;
+        gb.text = "X";
+        gb.bg = AppColors.kOrangeColor;
         activePlayer = 2;
         player1.add(gb.id);
       } else {
-        gb.text = "X";
-        gb.bg = AppColors.kOrangeColor;
+        gb.text = "0";
+        gb.bg = AppColors.kFalseColor;
         activePlayer = 1;
         player2.add(gb.id);
       }
@@ -156,14 +182,34 @@ class _simplepageState extends State<simplepage> {
     if (winner != -1) {
       if (winner == 1) {
         showDialog(
-            context: context,
-            builder: (_) => CustomDialog("Player 1 Won",
-                "Press the reset button to start again.", resetGame));
+            context: context, builder: (_) => AssetGiffyDialog(
+          image: Image.asset('assets/winner.gif'),
+          title: Text('Player 1 Won',
+            style: TextStyle(
+                fontSize: 22.0, fontWeight: FontWeight.w600),
+          ),
+          description: Text('Congratulations to Player 1',
+            textAlign: TextAlign.center,
+            style: TextStyle(),
+          ),
+          entryAnimation: EntryAnimation.DEFAULT,
+          onOkButtonPressed: () {resetGame();},
+        ));
       } else {
         showDialog(
-            context: context,
-            builder: (_) => CustomDialog("Player 2 Won",
-                "Press the reset button to start again.", resetGame));
+            context: context, builder: (_) => AssetGiffyDialog(
+          image: Image.asset('assets/winner.gif'),
+          title: Text('Player 2 Won',
+            style: TextStyle(
+                fontSize: 22.0, fontWeight: FontWeight.w600),
+          ),
+          description: Text('Congratulations to Player 2',
+            textAlign: TextAlign.center,
+            style: TextStyle(),
+          ),
+          entryAnimation: EntryAnimation.DEFAULT,
+          onOkButtonPressed: () {resetGame();},
+        ));
       }
     }
 
@@ -177,75 +223,96 @@ class _simplepageState extends State<simplepage> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
+    return StreamBuilder(
+        stream: ThemeColorProvider().getThemeColors().asStream(),
+    builder: (context, snapshot) {
+    if (snapshot.hasData) {
+    Map<String, dynamic> colors = snapshot.data;
     return Scaffold(
-        appBar: AppBar(
-        title: Text(" SIMPLE MODE LEVEL",
-        style: TextStyle(color: AppColors.kPrimaryColor)),
-    backgroundColor: AppColors.kWhiteColor,
-    iconTheme: IconThemeData(color: AppColors.kPrimaryColor),
-    centerTitle: true,
-    actions: [
-    IconButton(
-    icon: Icon(
-    Icons.home,
-    color: AppColors.kPrimaryColor,
+    appBar: AppBar(
+    title: Text("Tic Tac Toe"),
     ),
-    onPressed: () async {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(
-    builder: (context) => Homepage(),
-    ));
-    }),
-    ],),
-    drawer: Drawer(
-    child: MainDrawer(),
+    body: Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: <Widget>[
+      Text(
+        '',
+        style: TextStyle(
+          color: Color(colors[Themes.titleColor]),
+        ),
+      ),
+    Expanded(
+    child: GridView.builder(
+      physics: NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+    padding: const EdgeInsets.all(10.0),
+    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 3,
+    childAspectRatio: 1.0,
+    crossAxisSpacing: 9.0,
+    mainAxisSpacing: 9.0),
+    itemCount: buttonsList.length,
+    itemBuilder: (context, i) => SizedBox(
+    width: 100.0,
+    height: 100.0,
+    child: RaisedButton(
+    padding: const EdgeInsets.all(8.0),
+    onPressed: buttonsList[i].enabled
+    ? () => playGame(buttonsList[i])
+        : null,
+    child: Text(
+    buttonsList[i].text,
+    style: TextStyle(color: Colors.white, fontSize: 20.0),
     ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Expanded(
-              child: GridView.builder(
-                padding: const EdgeInsets.all(8.0),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
-                    childAspectRatio: 1.0,
-                    crossAxisSpacing: 9.0,
-                    mainAxisSpacing: 9.0),
-                itemCount: buttonsList.length,
-                itemBuilder: (context, i) => SizedBox(
-                  width: 70.0,
-                  height: 70.0,
-                  child: RaisedButton(
-                    padding: const EdgeInsets.all(4.0),
-                    onPressed: buttonsList[i].enabled
-                        ? () => playGame(buttonsList[i])
-                        : null,
-                    child: Text(
-                      buttonsList[i].text,
-                      style: TextStyle(color: Colors.white, fontSize: 20.0),
-                    ),
-                    color: buttonsList[i].bg,
-                    disabledColor: buttonsList[i].bg,
-                  ),
-                ),
-              ),
-            ),
-            RaisedButton(
-              child: Text(
-                "Exit",
-                style: TextStyle(color: Colors.white, fontSize: 20.0),
-              ),
-              color: Colors.red,
-              padding: const EdgeInsets.all(20.0),
-              onPressed: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Homepage()));
-              },
-            )
+    color: buttonsList[i].bg,
+    disabledColor: buttonsList[i].bg,
+    ),
+    ),
+    ),
+    ),
+      SizedBox(height: 10,),
+      RaisedButton(
+        child: Text(
+          "Reset",
+          style: TextStyle(color: Colors.white, fontSize: 20.0),
+        ),
+        color: Colors.red,
+        padding: const EdgeInsets.all(20.0),
+        onPressed: resetGame,
+      ),
+      SizedBox(height: 5,),
+      RaisedButton(
+        child: Text(
+          "Exit",
+          style: TextStyle(color: Colors.white, fontSize: 20.0),
+        ),
+        color: Colors.red,
+        padding: const EdgeInsets.all(20.0),
+        onPressed: () {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => Homepage()));
+        },
+      )
 
-          ],
-        )
+    ],
+    ),
+      floatingActionButton: FloatingActionButton(
+      onPressed: () {
+      if (isDark) {
+      ThemeColorProvider().changeTheme(Themes.light);
+      } else {
+      ThemeColorProvider().changeTheme(Themes.dark);
+      }
+      isDark = !isDark;
+      },
+      child: Icon(Icons.change_history),
+      ),
+      );}
+      return Container();
+    },
     );
   }
 }
