@@ -35,6 +35,7 @@ dependencies:
   rxdart: ^0.22.4
   giffy_dialog: ^1.7.0
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

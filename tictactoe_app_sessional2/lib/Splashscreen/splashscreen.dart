@@ -1,8 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:tictactoe_app_sessional2/homepage.dart';
 
-class splashscreen extends StatelessWidget {
+import '../AppColors.dart';
+
+/*class splashscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,5 +26,74 @@ class splashscreen extends StatelessWidget {
       ),
     );
   }
+}*/
+class splashscreen extends StatefulWidget {
+  @override
+  _splashscreenState createState() => _splashscreenState();
 }
+
+class _splashscreenState extends State<splashscreen> {
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(Duration(seconds: 6), () {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => MainPage()));
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.kAddToCartBtnBGColor,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // logo here
+            Image.asset(
+              'assets/tic_tac_toe_loader_.gif',
+              height: 120,
+            ),
+            Text(
+              'TIC TAC TOE',
+              style: TextStyle(
+                fontFamily: 'Pacifico',
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 20.0,
+
+              ),
+            ),
+            SizedBox(height: 10,),
+            Text(
+              'Qurat-Ul-Ain Sajid',
+              style: TextStyle(
+                fontFamily: 'Pacifico',
+                color: Colors.white,
+                fontSize: 20.0,
+
+              ),
+            ),
+            Text(
+              'CIIT/FA17-BCS-075/VHR',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15.0,
+                letterSpacing: 4.0,
+
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 
