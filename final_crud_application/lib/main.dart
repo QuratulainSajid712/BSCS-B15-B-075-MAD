@@ -1,8 +1,8 @@
 import 'dart:convert';
-
-import 'package:final_crud_application/AddEditPage.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+
+import 'addEditPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'CRUD APPLICATION',
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
   Future getData()async{
-    var url = 'http://192.168.1.104/php-mysql-flutter-crud/read.php';
+    var url = Uri.parse('http://192.168.10.4/flutter-crud-app/viewContact.php');
     var response = await http.get(url);
     return json.decode(response.body);
   }
@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Php Mysql Crud'),
+        title: Text('Crud Application'),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
@@ -73,13 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => AddEditPage(list: list,index: index,),),);
                       debugPrint('Edit Clicked');
                     },),
-                  title: Text(list[index]['lastname']),
+                  title: Text(list[index]['email']),
                   subtitle: Text(list[index]['phone']),
                   trailing: GestureDetector(child: Icon(Icons.delete),
                     onTap: (){
                       setState(() {
-                        var url = 'http://192.168.1.104/php-mysql-flutter-crud/delete.php';
-                        http.post(url,body: {
+                        var url = Uri.parse( 'http://192.168.10.4/flutter-crud-app/delete.php');
+                        http.post( url, body: {
                           'id' : list[index]['id'],
                         });
                       });

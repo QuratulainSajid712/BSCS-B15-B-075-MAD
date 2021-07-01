@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'package:final_crud_application/main.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'dart:async';
 
 class AddEditPage extends StatefulWidget {
   final List list;
@@ -12,9 +14,11 @@ class AddEditPage extends StatefulWidget {
 
 class _AddEditPageState extends State<AddEditPage> {
 
-  TextEditingController firstName = TextEditingController();
-  TextEditingController lastName = TextEditingController();
+  TextEditingController name = TextEditingController();
+  TextEditingController email = TextEditingController();
   TextEditingController phone = TextEditingController();
+  TextEditingController skill = TextEditingController();
+  TextEditingController bloodgroup = TextEditingController();
   TextEditingController address = TextEditingController();
 
   bool editMode = false;
@@ -22,20 +26,24 @@ class _AddEditPageState extends State<AddEditPage> {
 
   addUpdateData(){
     if(editMode){
-      var url = 'http://192.168.1.104/php-mysql-flutter-crud/edit.php';
-      http.post(url,body: {
+      var url = Uri.parse('http://192.168.10.4/flutter-crud-app/edit.php');
+      http.post( url, body: {
         'id' : widget.list[widget.index]['id'],
-        'fistname' : firstName.text,
-        'lastname' : lastName.text,
+        'name' : name.text,
+        'email' : email.text,
         'phone' : phone.text,
+        'skill' : skill.text,
+        'bloodgroup' : bloodgroup.text,
         'address' : address.text,
       });
     }else{
-      var url = 'http://192.168.1.104/php-mysql-flutter-crud/add.php';
-      http.post(url,body: {
-        'fistname' : firstName.text,
-        'lastname' : lastName.text,
+      var url = Uri.parse('http://192.168.10.4/flutter-crud-app/addcontact.php');
+      http.post( url,body: {
+        'name' : name.text,
+        'email' : email.text,
         'phone' : phone.text,
+        'skill' : skill.text,
+        'bloodgroup' : bloodgroup.text,
         'address' : address.text,
       });
     }
@@ -48,9 +56,11 @@ class _AddEditPageState extends State<AddEditPage> {
     super.initState();
     if(widget.index != null){
       editMode = true;
-      firstName.text = widget.list[widget.index]['fistname'];
-      lastName.text = widget.list[widget.index]['lastname'];
+      name.text = widget.list[widget.index]['name'];
+      email.text = widget.list[widget.index]['email'];
       phone.text = widget.list[widget.index]['phone'];
+      skill.text = widget.list[widget.index]['skill'];
+      bloodgroup.text = widget.list[widget.index]['bloodgroup'];
       address.text = widget.list[widget.index]['address'];
     }
 
@@ -67,18 +77,18 @@ class _AddEditPageState extends State<AddEditPage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-              controller: firstName,
+              controller: name,
               decoration: InputDecoration(
-                labelText: 'First Name',
+                labelText: ' Name',
               ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-              controller: lastName,
+              controller: email,
               decoration: InputDecoration(
-                labelText: 'Last Name',
+                labelText: 'E-mail',
               ),
             ),
           ),
@@ -92,7 +102,24 @@ class _AddEditPageState extends State<AddEditPage> {
               ),
             ),
           ),
-
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: skill,
+              decoration: InputDecoration(
+                labelText: 'Skill',
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: bloodgroup,
+              decoration: InputDecoration(
+                labelText: 'Blood Group',
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
