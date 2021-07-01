@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'CRUD APPLICATION',
       theme: ThemeData(
 
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => AddEditPage(list: list,index: index,),),);
                       debugPrint('Edit Clicked');
                     },),
-                  title: Text(list[index]['email']),
+                  title: Text(list[index]['name']),
                   subtitle: Text(list[index]['phone']),
                   trailing: GestureDetector(child: Icon(Icons.delete),
                     onTap: (){

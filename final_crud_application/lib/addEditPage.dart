@@ -139,8 +139,8 @@ class _AddEditPageState extends State<AddEditPage> {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage(),),);
                 debugPrint('Clicked RaisedButton Button');
               },
-              color: Colors.blue,
-              child: Text(editMode ? 'Update' :'Save',style: TextStyle(color: Colors.white),),
+              color: Colors.amber,
+              child: Text(editMode ? 'Update' :'Save',style: TextStyle(color: Colors.black),),
             ),
           ),
         ],
