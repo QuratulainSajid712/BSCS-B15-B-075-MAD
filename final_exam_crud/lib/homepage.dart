@@ -14,7 +14,7 @@ class _homepageState extends State<homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TIC TAC TOE",
+        title: Text("CRUD APP",
             style: TextStyle(color: Colors.black)),
         iconTheme: IconThemeData(color: Colors.black),
         centerTitle: true,
@@ -26,7 +26,7 @@ class _homepageState extends State<homepage> {
               ),
               onPressed: () async {
                 Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (context) => Homepage(),
+                  builder: (context) => homepage(),
                 ));
               }),
         ],),
