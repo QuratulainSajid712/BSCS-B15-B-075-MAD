@@ -137,6 +137,16 @@ class _AddEditPageState extends State<AddEditPage> {
               child: Text(editMode ? 'Update' :'Save',style: TextStyle(color: Colors.black),),
             ),
           ),
+          Padding(padding: EdgeInsets.all(8),
+            child: RaisedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => homepage(),),);
+                debugPrint('Clicked RaisedButton Button: Exit');
+              },
+              color: Colors.lightGreen,
+              child: Text( 'Exit' ,style: TextStyle(color: Colors.black),),
+            ),
+          ),
         ],
       ),
     );
