@@ -18,7 +18,7 @@ class MainDrawer extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 50.0,
-                backgroundImage: AssetImage('images/quiz.png'),
+                backgroundImage: AssetImage('images/crud.png'),
               ),
               SizedBox(
                 height: 5.0,

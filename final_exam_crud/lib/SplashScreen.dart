@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'dart:async';
 
+import 'homepage.dart';
+
 
 class splashscreen extends StatefulWidget {
   @override
@@ -29,7 +31,7 @@ class _splashscreenState extends State<splashscreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             CircleAvatar(
-              backgroundImage:AssetImage('images/quiz.png') ,
+              backgroundImage:AssetImage('images/crud.png') ,
               backgroundColor: Colors.white,
               radius: 100.0,
             ),

@@ -23,7 +23,7 @@ class _contactusState extends State<contactus> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             CircleAvatar(
-              backgroundImage:AssetImage('images/quiz.png') ,
+              backgroundImage:AssetImage('images/crud.png') ,
               backgroundColor: Colors.white,
               radius: 100.0,
             ),
